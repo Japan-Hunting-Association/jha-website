@@ -1,0 +1,19 @@
+{
+	"name": "TALO_frontend",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "frontend",
+	"workspaceFolder": "/code",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Dart-Code.dart-code",
+				"Dart-Code.flutter"
+			],
+			"settings": {
+
+			}
+		}
+	}
+}
