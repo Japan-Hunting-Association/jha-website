@@ -1,0 +1,28 @@
+@import './base.css';
+
+#app {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+
+  font-weight: normal;
+}
+
+a,
+.pink {
+  text-decoration: none;
+  color: var(--vt-c-divider-dark-1);
+  transition: 0.2s;
+}
+
+button,
+.pink {
+  color: var(--vt-c-pink);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: var(--vt-c-pink);
+  }
+}
