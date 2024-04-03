@@ -1,5 +1,7 @@
 FROM node:18-alpine
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git yarn python3 make g++  && \
-    yarn global add gatsby-cli
-EXPOSE 8000 9000
+    yarn global add gatsby-cli && \
+    yarn add styled-components gatsby-plugin-styled-components babel-plugin-styled-components
+
+EXPOSE 8000

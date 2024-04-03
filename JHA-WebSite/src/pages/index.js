@@ -1,5 +1,11 @@
 import * as React from "react"
+import Header from "../components/header.js"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <div>
+      <Header />
+      <div>Hello world!</div>
+    </div>
+  )
 }
