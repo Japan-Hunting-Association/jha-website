@@ -1,15 +1,13 @@
-version: "3.7"
+version: '3.9'
 services:
-  gatsby-my-site:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: gatsby-my-site
-    ports:
-      - "8000:8000"
     volumes:
       - .:/app
     working_dir: /app
+    ports:
+      - "4321:4321"
     stdin_open: true
-    environment:
-      - NODE_ENV=development
+    tty: true

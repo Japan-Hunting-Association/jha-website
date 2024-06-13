@@ -1,0 +1,151 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+---
+<Layout title="GeekBeer">    
+    <div class="company-info-section">
+        <div class="title">
+            Company Info
+        </div>
+        <div class="company-info">
+            <div class="company-info-field">
+                <div class="label">Name</div>
+                <div class="value">GeekBeer Co., Ltd.</div>
+            </div>
+            <div class="company-info-field">
+                <div class="label">Adress</div>
+                <div class="value">Gran Building 1F, 12 Yahatacho, Numazu, Shizuoka</div>
+            </div>
+            <div class="company-info-field">
+                <div class="label">CEO</div>
+                <div class="value">
+                    Yu Noda (as engineer:
+                    <a href='https://twitter.com/yunoda_3DCG' target="_blank" rel="noopener noreferrer" class="link">
+                        yunoda
+                    </a>)
+                </div>
+            </div>
+            <div class="company-info-field">
+                <div class="label">Founding Date</div>
+                <div class="value">Jan 10, 2024</div>
+            </div>
+            <div class="company-info-field">
+                <div class="label">Capital</div>
+                <div class="value">8,000,000 yen</div>
+            </div>
+            <div class="company-info-field">
+                <div class="label">Phone</div>
+                <div class="value">Not open. Please contact us via SNS.</div>
+            </div>
+        </div>
+    </div>
+    <div class="map-section">
+        <div class="title">
+            Main Office
+        </div>
+        <iframe
+          src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1522.8575628250894!2d138.85596981193575!3d35.09879356476658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019856176c13753%3A0xad4ebe7487c995f0!2z44CSNDEwLTA4ODEg6Z2Z5bKh55yM5rK85rSl5biC5YWr5bmh55S677yR77ySIOOCsOODqeODs-ODk-ODqw!5e0!3m2!1sja!2sjp!4v1690709624673!5m2!1sen!2sjp"
+          style="border:0;" 
+          allowfullscreen="true"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map">
+        </iframe>
+    </div>
+</Layout>
+
+<style scoped>
+.mission-section {
+    position: relative;
+    color: var(--color-background-mute);
+    background-image: url("assets/sample/factory-sample1.png");
+    background-size: cover;
+    height: 300px;
+}
+
+.mission {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-text);
+    padding: 5px;
+}
+
+.main {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.sub {
+}
+
+.low-alcohol-section {
+    position: relative;
+    color: var(--color-background-mute);
+    /* background-image: url("assets/sample/factory-sample1.png"); */
+    background-color: black;
+    background-size:contain;
+    height: 300px;
+}
+
+.contents {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+}
+
+.main {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.sub {
+}
+
+
+.company-info-section {
+    margin: 30px 0;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+
+.company-info {
+    width: 80%;
+    margin: 0 auto;
+}
+.company-info-field {
+    display: flex;
+    border-bottom: 1px solid var(--color-background-mute);
+    margin: 10px auto;
+}
+
+.label {
+    margin: 0 10px;
+    width: 25%;
+}
+.value {
+    margin: 0 10px;
+}
+
+.contents {
+
+}
+
+
+.map{
+    width: 100%;
+    height: 500px;
+}
+
+.link {
+    color: var(--vt-c-red);
+}
+</style>

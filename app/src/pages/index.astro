@@ -1,0 +1,47 @@
+---
+import Layout from '@layouts/Layout.astro';
+import TopCompanyInfo from '@components/Top/CompanyInfo.astro';
+import TopicsCarousel from '@components/Topic/TopicsCarousel.astro';
+
+import ServiceCard from '@components/Service/ServiceCard.astro';
+const services = [
+  { title: 'Hunter Community', description: 'Description for service 1', link: '/service1' },
+  { title: 'Hunter House', description: 'Description for service 2', link: '/service2' },
+  { title: 'Hunter Knowledge', description: 'Description for service 3', link: '/service3' },
+  { title: 'Hunter Store', description: 'Description for service 4', link: '/service4' },
+  { title: 'Hunter Tech', description: 'Description for service 5', link: '/service5' },
+];
+import topImage from "@assets/sample.jpg"
+import { Image } from "astro:assets";
+
+---
+
+<Layout title="JapanHuntingAssociation">
+  <!-- <TopCompanyInfo /> -->
+  <div class="hero min-h-screen" >
+    <div class="hero-overlay bg-opacity-60">
+    </div>
+    <div class="absolute h-full">
+      <Image src={topImage} alt="Background Image" class="object-cover h-full" />
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+    </div>
+    <div class="hero-content text-center text-neutral-content">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold text-white">Hunting 2.0</h1>
+        <p class="mb-5 text-white">狩猟をアップデートする。</p>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto my-16">
+    <h1 class="font-bold text-5xl my-4">お知らせ</h1>
+    <TopicsCarousel/>
+  </div>
+  <div class="max-w-6xl mx-auto my-16">
+    <h1 class="font-bold text-5xl my-4">サービス</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map(service => (
+        <ServiceCard title={service.title} description={service.description} link={service.link} />
+      ))}
+    </div>
+  </div>
+</Layout>

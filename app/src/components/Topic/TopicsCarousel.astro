@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('topic', ({ id }) => {
+  return id.startsWith(Astro.currentLocale+'/');
+});
+import { getBaseURL } from '@util/url';
+---
+{posts.map((post:any) => (
+  <div class="flex">
+    <time datetime={post.data.pubDate.toISOString()} class="fit-content px-2 bg-orange text-white my-auto">
+      { new Intl.DateTimeFormat('ja-JP').format(post.data.pubDate) }
+    </time>
+    <a href={ `topic/${getBaseURL(post.slug)}` } class="m-2">
+      { post.data.title }
+    </a>
+  </div>
+))}

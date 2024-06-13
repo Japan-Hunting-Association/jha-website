@@ -1,0 +1,27 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+import { Image } from "astro:assets";
+import logo from "@assets/logo.svg";
+import name from "@assets/company-name.png";
+import LanguageButton from "@components/Base/LanguageButton.astro";
+---
+
+<div class="navbar">
+  <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/")}>
+    <Image src={logo} alt="" class="object-contain h-10 w-10" />
+  </a>
+  <!-- <div class="flex-none">
+    <button class="btn btn-square btn-ghost">
+      <Image src={logo} alt="" class="object-contain h-10 w-10" />
+    </button>
+  </div> -->
+  <div class="flex-1 flex items-center justify-center">
+    <Image
+      src={name}
+      alt=""
+      class=" w-1/4"
+    />
+  </div>
+  <LanguageButton />
+</div>

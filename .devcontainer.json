@@ -3,7 +3,7 @@
 	"dockerComposeFile": [
 		"./docker-compose.yml"
 	],
-	"service": "gatsby-my-site",
+	"service": "astro-my-site",
 	"workspaceFolder": "/code",
 	"customizations": {
 		"vscode": {

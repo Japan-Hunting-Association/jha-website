@@ -1,0 +1,47 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+---
+
+<Layout title=''>
+    <div class="title">
+        Recruit
+    </div>
+    <div class="supplement">
+        GeekBeer is recruiting for the following positions.<br>
+        If you are interested, please contact us using 
+        <a href={ getRelativeLocaleUrl(Astro.currentLocale as string, '/contact') } class="link">
+            the contact page
+        </a>and include your request for employment.<br>
+    </div>
+    <div class="list">
+        We are not currently recruiting.
+    </div>
+</Layout>
+
+<style scoped>
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+
+.supplement {
+    display: block;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.link {
+    color: var(--vt-c-red);
+}
+
+.list{
+    font-weight: bold;
+    text-align: center;
+    margin: 30px;
+}
+</style>

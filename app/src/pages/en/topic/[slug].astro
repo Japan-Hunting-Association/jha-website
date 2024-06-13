@@ -1,0 +1,54 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('topic', ({ id }) => {
+  return id.startsWith('en/');
+});
+
+  const paths = pages.map(page => {
+    const [lang, ...slug] = page.slug.split('/');
+    return { params: { lang, slug: slug.join('/') || undefined }, props: page };
+  });
+
+  return paths;
+}
+
+const post: any = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title=''>
+	<div class="field">
+	<h1>{post.data.title}</h1>
+	<time datetime={post.data.pubDate?.toISOString()}>
+		{new Intl.DateTimeFormat('ja-JP').format(post.data.pubDate)}
+	</time>
+	<Content />
+	{post.data.tags && post.data.tags.map((tag:any) => (
+		<strong>{tag}</strong>
+	))}
+	</div>
+</Layout>
+
+<style>
+	.field {
+		margin: 0 30px;
+	}
+	
+	time {
+	  display: block;
+	  width: fit-content;
+	  text-align: center;
+	  margin: 5px 0px;
+	  padding: 0 10px;
+	  background-color: var(--color-text);
+	  color: var(--color-background);
+	}
+	
+	h1 {
+		font-size: 2rem;
+		font-weight: bold;
+	}
+</style>

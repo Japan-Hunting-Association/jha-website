@@ -1,0 +1,56 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logo from "@assets/GeekBeer/logo.svg";
+
+---
+
+<Layout title="GeekBeer">
+    <div class="mission-part">
+        Hack the Beer!
+    </div>
+    <div class="logo-part">
+        <Image src={logo} alt="" class="logo" />
+    </div>
+    <div class="company-summary-part">
+        GeekBeer is a brewery based in Numazu that specializes in low alcohol.
+    </div>
+    <!-- <AboutUsProductOverview /> -->
+</Layout>
+
+<style scoped>
+.mission-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10vw;
+    height: 100vh;
+}
+
+.logo-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo-part .logo {
+    width: 200px;
+    height: 200px;
+}
+
+.company-summary-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5vw;
+    height: 500px;
+    margin: 0 20px;
+    line-height: 1.5em;
+
+}
+</style>
