@@ -10,14 +10,18 @@ export const languages = {
   export const ui = {
     en: {
       'footer.about-us': 'About JHA',
+      'footer.director': 'Director',
       'footer.association': 'Association',
+      'footer.join': 'Join to us',
       'footer.recruit': 'Recruit',
       'footer.privacy': 'Privacy policy',
       'footer.contact': 'Contact',
     },
     ja: {
       'footer.about-us': '日本狩猟協会について',
+      'footer.director': '構成理事',
       'footer.association': '法人情報',
+      'footer.join': '会員になるには',
       'footer.recruit': '採用',
       'footer.privacy': 'プライバシーポリシー',
       'footer.contact': 'お問い合わせ',

@@ -5,23 +5,24 @@ import { Image } from "astro:assets";
 import logo from "@assets/logo.svg";
 import name from "@assets/company-name.png";
 import LanguageButton from "@components/Base/LanguageButton.astro";
+import DarkModeButton from "./DarkModeButton.astro";
 ---
 
 <div class="navbar">
-  <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/")}>
-    <Image src={logo} alt="" class="object-contain h-10 w-10" />
-  </a>
-  <!-- <div class="flex-none">
-    <button class="btn btn-square btn-ghost">
+  <div class="min-w-40">
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/")}>
       <Image src={logo} alt="" class="object-contain h-10 w-10" />
-    </button>
-  </div> -->
+    </a>
+  </div>
   <div class="flex-1 flex items-center justify-center">
     <Image
       src={name}
       alt=""
-      class=" w-1/4"
+      class="w-1/4"
     />
   </div>
-  <LanguageButton />
+  <div class="min-w-40">
+    <!-- <DarkModeButton /> -->
+    <LanguageButton />
+  </div>
 </div>

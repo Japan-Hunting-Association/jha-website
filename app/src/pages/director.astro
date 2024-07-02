@@ -1,0 +1,16 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import logo from "@assets/logo.svg";
+import PersonCard from "@components/Director/PersonCard.astro";
+import icon_yunoda from "@assets/icon_yunoda.png";
+---
+
+<Layout title="日本狩猟協会について">
+    <section>
+        <h1 class="flex justify-center items-center align-middle text-center font-bold text-4xl">構成理事</h1>
+        <div class="m-8">
+            <PersonCard icon={ icon_yunoda }/>
+        </div>
+    </section>
+</Layout>

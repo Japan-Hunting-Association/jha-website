@@ -1,0 +1,90 @@
+<label class="grid cursor-pointer place-items-center">
+  <input
+    type="checkbox"
+    class="toggle bg-base-content col-span-2 col-start-1 row-start-1"
+    id="theme-toggle"
+  />
+  <svg
+    class="stroke-base-100 fill-base-100 col-start-1 row-start-1"
+    xmlns="http://www.w3.org/2000/svg"
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <circle cx="12" cy="12" r="5"></circle>
+    <path
+      d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+    ></path>
+  </svg>
+  <svg
+    class="stroke-base-100 fill-base-100 col-start-2 row-start-1"
+    xmlns="http://www.w3.org/2000/svg"
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</label>
+
+<!-- <button id="theme-toggle" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-300 py-2 px-4 rounded">
+  <span id="theme-toggle-light" class="hidden">🌞</span>
+  <span id="theme-toggle-dark">🌜</span>
+</button> -->
+
+<script>
+  const themeToggle = document.getElementById(
+    "theme-toggle",
+  ) as HTMLInputElement;
+  const rootElement = document.documentElement;
+  const themeToggleLight = document.getElementById("theme-toggle-light");
+  const themeToggleDark = document.getElementById("theme-toggle-dark");
+
+  // Set initial theme based on user's preference or system preference
+  const initialTheme =
+    sessionStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+  rootElement.setAttribute("data-theme", initialTheme);
+  if (initialTheme === "dark") {
+    themeToggleLight?.classList.remove("hidden");
+    themeToggleDark?.classList.add("hidden");
+    themeToggle.checked = true;
+  }
+
+  themeToggle?.addEventListener("click", () => {
+    const currentTheme =
+      rootElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    rootElement.setAttribute("data-theme", newTheme);
+    sessionStorage.setItem("theme", newTheme);
+
+    if (newTheme === "dark") {
+      themeToggleLight?.classList.remove("hidden");
+      themeToggleDark?.classList.add("hidden");
+    } else {
+      themeToggleLight?.classList.add("hidden");
+      themeToggleDark?.classList.remove("hidden");
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const image = document.getElementById("image");
+    const button = document.getElementById("toggle-button");
+
+    button?.addEventListener("click", () => {
+      image?.classList.toggle("invert");
+    });
+  });
+</script>

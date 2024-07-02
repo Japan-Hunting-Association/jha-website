@@ -11,7 +11,7 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<footer class="footer p-10 bg-white text-base-content">
+<footer class="bg-gray-100 footer p-10 text-base-content">
   <nav>
     <h6 class="footer-title">Services</h6>
     <a class="link link-hover">Hunter Community</a>
@@ -24,6 +24,12 @@ const translatePath = useTranslatedPath(lang);
     <h6 class="footer-title">Association</h6>
     <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/about-us")}>
       {t("footer.about-us")}
+    </a>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/director")}>
+      {t("footer.director")}
+    </a>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/join")}>
+      {t("footer.join")}
     </a>
     <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/association")}>
       {t("footer.association")}
@@ -65,6 +71,6 @@ const translatePath = useTranslatedPath(lang);
     </div>
   </nav>
 </footer>
-<div class="bg-white text-center text-base-content text-xs py-2">
+<div class="bg-gray-100 flex-none text-center text-base-content text-xs py-2">
   Copyright © Japan Hunting Association. All Rights Reserved.
 </div>

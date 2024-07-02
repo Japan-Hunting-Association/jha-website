@@ -4,13 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        "white": "#EEEEEE",
-        "gray": "#686D76",
-        "black": "#373A40",
-        "orange": "#DC5F00"
+        // "white": "#EEEEEE",
+        // "gray": "#686D76",
+        // "black": "#373A40",
+        "orange": "#DC5F00",
       },
     },
   },
   plugins: [require('daisyui'),],
+  daisyui: {
+    themes: ["light", "dark"], // DaisyUIのテーマ
+  },
 }
 
