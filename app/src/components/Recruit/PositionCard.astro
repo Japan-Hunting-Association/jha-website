@@ -1,0 +1,16 @@
+---
+const { title, skill, description } = Astro.props;
+---
+
+<div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg flex">
+    <div class="p-6">
+        <h2 class="text-2xl font-bold my-4">{ title }</h2>
+        <div class="flex my-2">
+          <div class="bg-orange text-white px-2">必要スキル</div>
+          <div class="text-gray-700 mx-2">{ skill }</div>
+        </div>
+        <p class="text-gray-600">
+            { description }
+        </p>
+    </div>
+</div>
