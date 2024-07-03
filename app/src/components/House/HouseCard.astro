@@ -1,10 +1,10 @@
 ---
-const { house_data, title, image, description, link, tags } = Astro.props;
+const { house_data } = Astro.props;
 import { Image } from 'astro:assets';
 
 ---
 
-<a href={ link } class="card bg-base-100 w-auto shadow-xl">
+<a href={ house_data.link } class="card bg-base-100 w-auto shadow-xl">
     <figure>
       <Image
         src={ house_data.cover }
