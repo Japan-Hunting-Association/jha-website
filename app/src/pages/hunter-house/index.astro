@@ -17,7 +17,7 @@ const houses = await getCollection('house', ({ id }) => {
         <h2 class="text-3xl font-bold my-4">提供中のハンターハウス</h2>
         <div class="grid grid-cols-3 gap-4 ">
             {houses.map(house => (
-                <HouseCard house_data={ house.data } />
+                <HouseCard house_data={ house } />
             ))}        
         </div>
     </section>

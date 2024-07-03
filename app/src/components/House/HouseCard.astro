@@ -1,23 +1,26 @@
 ---
+import { getBaseURL } from '@util/url';
+
 const { house_data } = Astro.props;
 import { Image } from 'astro:assets';
 
 ---
 
-<a href={ house_data.link } class="card bg-base-100 w-auto shadow-xl">
+<a href={ `hunter-house/${getBaseURL(house_data.slug)}` } class="card bg-base-100 w-auto shadow-xl">
     <figure>
       <Image
-        src={ house_data.cover }
+        src={ house_data.data.cover }
         alt="House Image" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">
-        { house_data.name }
+        { house_data.data.name }
+        {house_data.data.slug}
         <div class="badge badge-secondary">NEW</div>
       </h2>
-      <p>{ house_data.description }</p>
+      <p>{ house_data.data.description }</p>
       <div class="card-actions justify-end">
-        { house_data.tags && house_data.tags.map((equipment: any) => 
+        { house_data.data.tags && house_data.data.tags.map((equipment: any) => 
           <div class="badge badge-outline">{ equipment }</div>
         )}
       </div>
