@@ -3,8 +3,45 @@ import Layout from '@layouts/Layout.astro';
 import HouseCard from '@components/House/HouseCard.astro';
 ---
 
-<Layout title="ハンターハウスに掲載する物件を募集中">
-    <section>
-        日本狩猟協会では、ハンターハウスに掲載したい物件主様を募集しています。
+<Layout title="ハンターハウスに物件を掲載するには">
+    <section class="m-8">
+        <h1 class="text-3xl font-bold text-center my-12">物件の応募方法</h1>
+
+        <div>
+            <h2 class="text-3xl font-bold my-4">はじめに</h2>
+            <div>
+                日本狩猟協会では、ハンターハウスに掲載したい物件主様を募集しています。
+            </div>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold my-4">応募条件</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>日本狩猟協会の会員である、もしくは会員に属する予定があるもの</li>
+                <li>物件に関して法的な使用権を有すること</li>
+                <li>管理人を選定できること（※居住している必要はありません）</li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold my-4">推奨設備</h2>
+            <div class="my-4">
+                以下は必須ではありませんが、備え付けておくことを推奨する設備です。
+            </div>
+            <ul class="list-disc list-inside space-y-2">
+                <li>利用者用のガンロッカー</li>
+                <li>利用者用の装弾ロッカー</li>
+                <li>解体場所および解体道具</li>
+                <li>保冷設備</li>      
+                <li>インターネット環境</li>                            
+            </ul>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold my-4">応募手順</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Xやdiscordなどのコミュニティスペースから「掲載希望」の旨をご連絡ください。</li>
+                <li>対象の物件についてヒアリングします</li>
+                <li>掲載内容を執筆してもらいます(<a class="text-blue-500 hover:text-blue-700" href="/hunter-house/oami">サンプル</a>)</li>
+                <li>掲載スタート</li>
+            </ul>
+        </div>
     </section>
 </Layout>

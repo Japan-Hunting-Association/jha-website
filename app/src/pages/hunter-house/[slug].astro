@@ -1,0 +1,98 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const pages = await getCollection("house", ({ id }) => {
+        return id.startsWith("ja/");
+    });
+
+    const paths = pages.map((page) => {
+        const [lang, ...slug] = page.slug.split("/");
+        return {
+            params: { lang, slug: slug.join("/") || undefined },
+            props: page,
+        };
+    });
+
+    return paths;
+}
+
+const post: any = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={ post.data.name }>
+    <div class="m-8">
+        <h1 class="text-center font-bold text-3xl">{post.data.name}</h1>
+        <div class="flex justify-end m-12">
+            <div>最終更新日</div>
+            <time datetime={post.data.pubDate?.toISOString()}>
+                {new Intl.DateTimeFormat("ja-JP").format(post.data.pubDate)}
+            </time>
+        </div>
+        <!-- <div class="flex">
+            { post.data.tags && post.data.tags.map((tag: any) => 
+                <div class="m-4">{ tag }</div>
+            )}
+        </div> -->
+          
+        <div class="base-info">
+            <h2 class="text-2xl font-semibold mr-4">使用料</h2>
+            <div class="text-lg">{ post.data.price } </div>
+        </div>
+
+        <div class="base-info">
+            <h2 class="text-2xl font-semibold mr-4">設備</h2>
+            <div class="flex">
+                { post.data.equipments && post.data.equipments.map((equipment: any) => 
+                    <div class="m-2 badge badge-outline">{ equipment }</div>
+                )}
+            </div>
+        </div>
+
+        <div class="shadow-md rounded-lg p-6 m-4">
+            <h2 class="text-2xl font-semibold mr-4">施設概要</h2>
+            <p class="text-lg m-4">
+              <Content />
+            </p>
+        </div>
+
+        <div class="shadow-md rounded-lg p-6 m-4">
+            <div class="flex items-center">
+                <h2 class="text-2xl font-semibold mr-4">アクセス</h2>
+                <p class="text-lg">{ post.data.address }</p>
+            </div>
+            <iframe src={ post.data.map_embed } class="flex-none w-1/2 h-96 rounded-xl my-4" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="base-info">
+            <h2 class="text-2xl font-semibold mr-4">管理人</h2>
+            <p class="text-lg">{ post.data.owner }</p>
+        </div>
+
+        <div class="base-info">
+            <h2 class="text-2xl font-semibold mr-4">予約方法</h2>
+            <div class="flex">
+                { post.data.booking }
+            </div>
+        </div>
+
+        <div class="base-info">
+            <h2 class="text-2xl font-semibold mr-4">連絡先</h2>
+            <div class="flex">
+                <a href={ post.data.contact } class="text-blue-500 underline hover:text-blue-700" target="_blank">{ post.data.contact }</a>
+            </div>
+        </div>
+
+        <div class="flex justify-center m-12">
+            <a href="/hunter-house" role="button" class="btn w-1/4">ハンターハウス一覧に戻る</a>
+        </div>
+    </div>
+</Layout>
+
+<style scoped>
+    .base-info {
+        @apply flex items-center shadow-md rounded-lg p-6 m-4;
+    }
+</style>

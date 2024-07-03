@@ -1,24 +1,25 @@
 ---
-const { title, image, description, link } = Astro.props;
+const { house_data, title, image, description, link, tags } = Astro.props;
 import { Image } from 'astro:assets';
+
 ---
 
 <a href={ link } class="card bg-base-100 w-auto shadow-xl">
     <figure>
       <Image
-        src={ image }
+        src={ house_data.cover }
         alt="House Image" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">
-        { title }
+        { house_data.name }
         <div class="badge badge-secondary">NEW</div>
       </h2>
-      <p>新千歳空港から電車で40分の好立地。道央の狩猟拠点です。</p>
+      <p>{ house_data.description }</p>
       <div class="card-actions justify-end">
-        <div class="badge badge-outline">北海道</div>
-        <div class="badge badge-outline">車あり</div>
-        <div class="badge badge-outline">ガンロッカー</div>
+        { house_data.tags && house_data.tags.map((equipment: any) => 
+          <div class="badge badge-outline">{ equipment }</div>
+        )}
       </div>
     </div>
 </a>

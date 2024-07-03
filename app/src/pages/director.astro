@@ -4,13 +4,28 @@ import { Image } from "astro:assets";
 import logo from "@assets/logo.svg";
 import PersonCard from "@components/Director/PersonCard.astro";
 import icon_yunoda from "@assets/icon_yunoda.png";
+const directors = [
+  { 
+    name: 'yunoda',
+    sns: 'https://x.com/yunoda_hunting',
+    icon: icon_yunoda,
+    role:'代表理事',
+    description: `
+        第一期代表理事を務めるyunodaです。
+        狩猟を始めてみると、さまざまな問題に悩まされていることを実感し、この協会を立ち上げました。
+        狩猟界隈はドキュメント文化が非常に薄く、さまざまな情報にアクセスすることが困難です。
+        これをまず第一の改善点として、微力ではありますが、協会一同挑戦してまいります。
+    ` },
+];
 ---
 
 <Layout title="日本狩猟協会について">
     <section>
         <h1 class="flex justify-center items-center align-middle text-center font-bold text-4xl">構成理事</h1>
         <div class="m-8">
-            <PersonCard icon={ icon_yunoda }/>
+            {directors.map(director => (
+                <PersonCard name={ director.name } sns={ director.sns } icon={ director.icon } role={ director.role } description={ director.description }/>
+            ))}
         </div>
     </section>
 </Layout>

@@ -1,22 +1,24 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { Image } from "astro:assets";
-import logo from "@assets/logo.svg";
 import HouseCard from "@components/House/HouseCard.astro";
-import image_yubari from "@assets/HunterHouseYubari.jpg";
-import image_oami from "@assets/HunterHouseOami.jpg";
-import Banner from "@components/House/Banner.astro";
+
+import { getCollection } from 'astro:content';
+const houses = await getCollection('house', ({ id }) => {
+  return id.startsWith(Astro.currentLocale+'/');
+});
 ---
 
 <Layout title="ハンターハウスとは">
     <section class="m-8">
         <h2 class="text-3xl font-bold">ハンターハウスとは</h2>
+        <div class="my-4">ハンターハウスは狩猟遠征の短期宿泊やお試し狩猟移住にご利用いただけるハンター向けシェアハウスです。</div>
     </section>
     <section class="m-8">
         <h2 class="text-3xl font-bold my-4">提供中のハンターハウス</h2>
         <div class="grid grid-cols-3 gap-4 ">
-            <HouseCard title="ハンターハウス夕張" image={image_yubari} link="/hunter-house/yubari"/>
-            <HouseCard title="ハンターハウス大網白里" image={image_oami} link=""/>
+            {houses.map(house => (
+                <HouseCard house_data={ house.data } />
+            ))}        
         </div>
     </section>
     <div class="divider m-8"></div>
