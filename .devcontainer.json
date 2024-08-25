@@ -3,12 +3,12 @@
 	"dockerComposeFile": [
 		"./docker-compose.yml"
 	],
-	"service": "astro-my-site",
+	"service": "app",
 	"workspaceFolder": "/code",
 	"customizations": {
 		"vscode": {
 			"extensions": [
-
+				"astro-build.astro-vscode"
 			],
 			"settings": {
 
