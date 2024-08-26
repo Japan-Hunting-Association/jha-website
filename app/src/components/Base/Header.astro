@@ -8,7 +8,7 @@ import LanguageButton from "@components/Base/LanguageButton.astro";
 import DarkModeButton from "./DarkModeButton.astro";
 ---
 
-<div class="navbar">
+<div class="navbar px-40">
   <div class="min-w-40">
     <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/")}>
       <Image src={logo} alt="" class="object-contain h-10 w-10" />
@@ -18,11 +18,10 @@ import DarkModeButton from "./DarkModeButton.astro";
     <Image
       src={name}
       alt=""
-      class="w-1/4"
+      class="w-60"
     />
   </div>
   <div class="min-w-40">
-    <!-- <DarkModeButton /> -->
     <LanguageButton />
   </div>
 </div>

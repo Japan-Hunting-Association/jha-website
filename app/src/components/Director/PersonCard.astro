@@ -4,12 +4,14 @@ import { Image } from 'astro:assets';
 ---
 
 <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg flex">
-    <Image
-        class="w-48 h-auto object-cover"
-        src={ icon }
-        alt="Person Image"
-    />
-    <div class="p-6">
+    <div class="w-1/4 flex item-center">
+        <Image
+            class="aspect-square object-cover"
+            src={ icon }
+            alt="Person Image"
+        />
+    </div>
+    <div class="w-3/4 p-6">
         <h2 class="text-2xl font-bold mb-2">
             <a href={ sns } class="text-blue-500 hover:underline" target="_blank">{ name }</a>
         </h2>
