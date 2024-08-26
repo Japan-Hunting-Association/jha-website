@@ -15,6 +15,7 @@ const topicCollection = defineCollection({
     coverAlt: z.string(),
   })
 });
+
 const houseCollection = defineCollection({
   schema: ({ image }) => z.object({
     name: z.string().optional(),
@@ -29,9 +30,11 @@ const houseCollection = defineCollection({
     address: z.string().optional(),
     description: z.string().optional(),
     price: z.string().optional(),
-    map_embed: z.string().optional()
+    map_embed: z.string().optional(),
+    forRent: z.string().optional()
   })
 });
+
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   topic: topicCollection,

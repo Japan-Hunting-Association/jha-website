@@ -2,38 +2,44 @@
 import Layout from "@layouts/Layout.astro";
 import HouseCard from "@components/House/HouseCard.astro";
 
-import { getCollection } from 'astro:content';
-const houses = await getCollection('house', ({ id }) => {
-  return id.startsWith(Astro.currentLocale+'/');
+import { getCollection } from "astro:content";
+const houses = await getCollection("house", ({ id }) => {
+    return id.startsWith(Astro.currentLocale + "/");
 });
 ---
 
 <Layout title="ハンターハウスとは">
-    <section class="m-8">
-        <h2 class="text-3xl font-bold">ハンターハウスとは</h2>
-        <div class="my-4">ハンターハウスは狩猟遠征の短期宿泊やお試し狩猟移住にご利用いただけるハンター向けシェアハウスです。</div>
-    </section>
-    <section class="m-8">
-        <h2 class="text-3xl font-bold my-4">提供中のハンターハウス</h2>
-        <div class="grid grid-cols-3 gap-4 ">
-            {houses.map(house => (
-                <HouseCard house_data={ house } />
-            ))}        
+    <div class="flex flex-col gap-8">
+        <div class="mt-8">
+            <h2 class="text-3xl text-center font-bold">ハンターハウスとは</h2>
+            <div class="my-4">
+                ハンターハウスは狩猟遠征の短期宿泊やお試し狩猟移住にご利用いただけるハンター向けシェアハウスです。当協会会員以外の方でもご利用いただけます。<br>
+                物件によっては入居も可能です。これから猟を始める方や銃が置ける物件をお探しの方は、ぜひご相談ください。
+            </div>
         </div>
-    </section>
-    <div class="divider m-8"></div>
-    <section class="m-8">
-        <h2 class="text-3xl font-bold my-4">物件募集中</h2>
-        <div class="my-2">
-            日本狩猟協会では、ハンターハウスの活動に協力してくれる方を募集しております。
+        <div>
+            <h2 class="text-3xl font-bold my-4">提供中のハンターハウス</h2>
+            <div class="grid grid-cols-3 gap-4">
+                {houses.map((house) => <HouseCard house_data={house} />)}
+            </div>
         </div>
-        <ul class="list-disc list-inside space-y-1">
-            <li>実家が空き家で持て余してる</li>
-            <li>使ってない別荘がある</li>
-            <li>民泊をやっているが、猟師にも利用してもらいたい</li>
-        </ul>
-        <div class="my-2">
-            掲載を希望される方は、<a href="/hunter-house/accepting" class="text-blue-500 hover:text-blue-700">こちら</a>より詳細をご確認ください。
+        <div class="divider"></div>
+        <div>
+            <h2 class="text-3xl font-bold my-4">物件募集中</h2>
+            <div class="my-2">
+                日本狩猟協会では、ハンターハウスの活動に協力してくれる方を募集しております。
+            </div>
+            <ul class="list-disc list-inside space-y-1">
+                <li>実家が空き家で持て余してる</li>
+                <li>使ってない別荘がある</li>
+                <li>民泊をやっているが、猟師にも利用してもらいたい</li>
+            </ul>
+            <div class="my-2">
+                掲載を希望される方は、<a
+                    href="/hunter-house/accepting"
+                    class="text-blue-500 hover:text-blue-700">こちら</a
+                >より詳細をご確認ください。
+            </div>
         </div>
-    </section>
+    </div>
 </Layout>

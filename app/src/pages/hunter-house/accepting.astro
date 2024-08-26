@@ -4,8 +4,8 @@ import HouseCard from '@components/House/HouseCard.astro';
 ---
 
 <Layout title="ハンターハウスに物件を掲載するには">
-    <section class="m-8">
-        <h1 class="text-3xl font-bold text-center my-12">物件の応募方法</h1>
+    <section class="flex flex-col gap-4 my-8">
+        <h1 class="text-3xl font-bold text-center">物件の応募方法</h1>
 
         <div>
             <h2 class="text-3xl font-bold my-4">はじめに</h2>
@@ -36,12 +36,12 @@ import HouseCard from '@components/House/HouseCard.astro';
         </div>
         <div>
             <h2 class="text-3xl font-bold my-4">応募手順</h2>
-            <ul class="list-disc list-inside space-y-2">
+            <ol class="list-decimal list-inside space-y-2">
                 <li>Xやdiscordなどのコミュニティスペースから「掲載希望」の旨をご連絡ください。</li>
                 <li>対象の物件についてヒアリングします</li>
                 <li>掲載内容を執筆してもらいます(<a class="text-blue-500 hover:text-blue-700" href="/hunter-house/oami">サンプル</a>)</li>
                 <li>掲載スタート</li>
-            </ul>
+            </ol>
         </div>
     </section>
 </Layout>

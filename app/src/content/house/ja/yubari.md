@@ -11,6 +11,7 @@ coverAlt: "hunter house in Yubari"
 lang: ja
 tags: [北海道, 鹿撃ち, 狩猟車あり, 個室あり, 解体場所あり]
 equipments: [冷凍ストッカー, ガンロッカー, 装弾ロッカー, 真空パック機, 軽トラック, 解体道具, 浴室, 汲み取りトイレ, 渓流釣り装備, ガスコンロ, 洗濯機]
+forRent: '一部賃貸（間借り）および完全賃貸も可能です。ご相談ください。'
 booking: 'X(旧twitter)よりDMをお送りください。' 
 contact: https://x.com/yunoda_hunting
 ---

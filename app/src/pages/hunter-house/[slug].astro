@@ -67,6 +67,13 @@ const { Content } = await post.render();
         </div>
 
         <div class="base-info">
+            <h2 class="text-2xl font-semibold mr-4">賃貸</h2>
+            <div class="flex">
+                { post.data.forRent }
+            </div>
+        </div>
+
+        <div class="base-info">
             <h2 class="text-2xl font-semibold mr-4">管理人</h2>
             <p class="text-lg">{ post.data.owner }</p>
         </div>
