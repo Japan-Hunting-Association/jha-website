@@ -1,5 +1,10 @@
 {
   "devDependencies": {
     "daisyui": "^4.12.2"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^5.2.0",
+    "rehype-add-classes": "^1.0.0",
+    "remark-breaks": "^4.0.0"
   }
 }

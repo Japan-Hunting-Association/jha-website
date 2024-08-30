@@ -13,5 +13,19 @@ export default defineConfig({
   routing: {
     prefixDefaultLocale: true
   },
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  markdown: {
+    remarkPlugins: [
+      'remark-breaks'
+    ],
+    rehypePlugins: [
+      ['rehype-add-classes', {
+        h1: 'my-4 text-3xl',
+        h2: 'my-4 text-2xl',
+        ul: 'list-disc list-inside space-y-2',
+        li: 'my-2',
+        p: 'my-8'
+      }],
+    ],
+  },
 });

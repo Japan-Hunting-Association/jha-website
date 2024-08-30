@@ -22,7 +22,7 @@ const post: any = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={ post.data.name }>
+<Layout title={post.data.name}>
     <div class="flex flex-col gap-4">
         <h1 class="text-center font-bold text-5xl mt-20">{post.data.name}</h1>
         <div class="flex justify-end m-12">
@@ -36,70 +36,95 @@ const { Content } = await post.render();
                 <div class="m-4">{ tag }</div>
             )}
         </div> -->
-          
+
         <div class="base-info">
             <h2 class="text-2xl font-semibold mr-4">使用料</h2>
-            <div class="text-lg">{ post.data.price } </div>
+            <div class="text-lg">{post.data.price}</div>
         </div>
 
         <div class="shadow-md rounded-lg p-6">
             <h2 class="text-2xl font-semibold mr-4">施設概要</h2>
             <p class="text-lg m-4">
-              <Content />
+                <Content />
             </p>
         </div>
 
         <div class="base-info">
             <h2 class="text-2xl font-semibold mr-4">設備</h2>
             <div class="grid grid-cols-4 gap-2">
-                { post.data.equipments && post.data.equipments.map((equipment: any) => 
-                    <div class="badge badge-outline">{ equipment }</div>
-                )}
+                {
+                    post.data.equipments &&
+                        post.data.equipments.map((equipment: any) => (
+                            <div class="badge badge-outline">{equipment}</div>
+                        ))
+                }
             </div>
         </div>
 
         <div class="shadow-md rounded-lg p-6">
             <div class="flex items-center">
                 <h2 class="text-2xl font-semibold mr-4">アクセス</h2>
-                <p class="text-lg">{ post.data.address }</p>
+                <p class="text-lg">{post.data.address}</p>
             </div>
-            <iframe src={ post.data.map_embed } class="flex-none w-1/2 h-96 rounded-xl my-4" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src={post.data.map_embed}
+                class="flex-none w-1/2 h-96 rounded-xl my-4"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="base-info">
             <h2 class="text-2xl font-semibold mr-4">賃貸</h2>
             <div class="flex">
-                { post.data.forRent }
+                {post.data.forRent}
             </div>
         </div>
 
         <div class="base-info">
             <h2 class="text-2xl font-semibold mr-4">管理人</h2>
-            <p class="text-lg">{ post.data.owner }</p>
+            <p class="text-lg">{post.data.owner}</p>
         </div>
 
         <div class="base-info">
             <h2 class="text-2xl font-semibold mr-4">予約方法</h2>
             <div class="flex">
-                { post.data.booking }
+                {post.data.booking}
             </div>
         </div>
 
         <div class="base-info">
             <h2 class="text-2xl font-semibold mr-4">連絡先</h2>
             <div class="flex">
-                <a href={ post.data.contact } class="text-blue-500 underline hover:text-blue-700" target="_blank">{ post.data.contact }</a>
+                <a
+                    href={post.data.contact}
+                    class="text-blue-500 underline hover:text-blue-700"
+                    target="_blank">{post.data.contact}</a
+                >
             </div>
         </div>
 
         <div class="flex justify-center m-12">
-            <a href="/hunter-house" role="button" class="btn w-1/4">ハンターハウス一覧に戻る</a>
+            <a href="/hunter-house" role="button" class="btn w-1/4"
+                >ハンターハウス一覧に戻る</a
+            >
         </div>
     </div>
 </Layout>
 
-<style scoped>
+<style>
     .base-info {
         @apply flex items-center shadow-md rounded-lg p-6;
+    }
+
+    .custom-h1-class {
+        font-size: 3rem;
+        color: blue;
+    }
+
+    .custom-h2-class {
+        font-size: 2rem;
+        color: green;
     }
 </style>
