@@ -7,12 +7,12 @@ const posts = await getCollection('topic', ({ id }) => {
 });
 
 const sortedPosts = posts.sort((a, b) => {
-  // フロントマターの要素にアクセス（例えば `date` 要素があると仮定）
-  const dateA = new Date(a.data.pubDate);
-  const dateB = new Date(b.data.pubDate);
+  // 型ガードを追加してpubDateが有効であることを確認
+  const dateA = a.data.pubDate ? new Date(a.data.pubDate) : new Date(0);
+  const dateB = b.data.pubDate ? new Date(b.data.pubDate) : new Date(0);
 
-  return dateB.getTime() - dateA.getTime(); // 昇順にソート
-});
+  return dateB.getTime() - dateA.getTime(); // 降順にソート});
+})
 ---
 <div class="flex flex-col gap-2">
 {posts.map((post:any) => (
