@@ -16,7 +16,7 @@ export default defineConfig({
   integrations: [tailwind()],
   markdown: {
     remarkPlugins: [
-
+      'remark-breaks'
     ],
     rehypePlugins: [
       ['rehype-add-classes', {

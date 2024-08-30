@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/markdown-remark": "^5.2.0",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.5.16",
+    "rehype-add-classes": "^1.0.0",
+    "remark-breaks": "^4.0.0",
     "typescript": "^5.4.4"
   },
   "devDependencies": {
