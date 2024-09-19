@@ -1,5 +1,6 @@
 ---
 name: 'ハンターハウスSample'
+isPublic: false
 pubDate: 2024-06-26
 description: '都内から車で2時間。千葉県の中央に位置するため、オールマイティに獲物が狙えます。'
 address: 〒299-3246 千葉県大網白里市小中１１２５

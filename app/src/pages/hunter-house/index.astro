@@ -20,7 +20,7 @@ const houses = await getCollection("house", ({ id }) => {
         <div>
             <h2 class="xl:text-3xl text-center font-bold my-4">提供中のハンターハウス</h2>
             <div class="grid xl:grid-cols-3 gap-4">
-                {houses.map((house) => <HouseCard house_data={house} />)}
+                {houses.map((house) => house.data.isPublic ? <HouseCard house_data={house} /> : <></>)}
             </div>
         </div>
         <div class="divider"></div>
