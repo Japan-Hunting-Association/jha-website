@@ -19,7 +19,7 @@ const topicCollection = defineCollection({
 const houseCollection = defineCollection({
   schema: ({ image }) => z.object({
     name: z.string().optional(),
-    isPublic: z.boolean(),
+    isPublic: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
     equipments: z.array(z.string()).optional(),
     pubDate: z.date().optional(),

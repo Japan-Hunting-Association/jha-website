@@ -7,7 +7,7 @@ address: 〒068-0755 北海道新夕張紅葉山２４７−６２
 map_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d538.6244955196777!2d142.03461829901698!3d42.93895004084584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f74c1aad6971645%3A0x7aa5755014fabbdd!2z44OP44Oz44K_44O844OP44Km44K55aSV5by1!5e1!3m2!1sja!2sjp!4v1724611660591!5m2!1sja!2sjp"
 owner: 'yunoda'
 price: 準備中
-cover: '@content/house/img/yubari/house_image.jpg'
+cover: '/ogp/yubari.jpg'
 coverAlt: "hunter house in Yubari"
 lang: ja
 tags: [北海道, 鹿撃ち, 狩猟車あり, 個室あり, 解体場所あり]
