@@ -24,7 +24,7 @@ const houseCollection = defineCollection({
     equipments: z.array(z.string()).optional(),
     pubDate: z.date().optional(),
     owner: z.string().optional(),
-    cover: image(),
+    cover: z.string().optional(),
     coverAlt: z.string().optional(),
     booking: z.string().optional(),
     contact: z.string().optional(),
