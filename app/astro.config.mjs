@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
+import imgAttr from 'remark-imgattr';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,7 +17,8 @@ export default defineConfig({
   integrations: [tailwind()],
   markdown: {
     remarkPlugins: [
-      'remark-breaks'
+      'remark-breaks',
+      imgAttr
     ],
     rehypePlugins: [
       ['rehype-add-classes', {
@@ -24,7 +26,7 @@ export default defineConfig({
         h2: 'my-4 text-2xl',
         ul: 'list-disc list-inside space-y-2',
         li: 'my-2',
-        p: 'my-8'
+        p: 'my-2'
       }],
     ],
   },

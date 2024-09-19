@@ -15,7 +15,12 @@
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.5.16",
     "rehype-add-classes": "^1.0.0",
+    "remark": "^15.0.1",
     "remark-breaks": "^4.0.0",
+    "remark-html": "^16.0.1",
+    "remark-image-attributes": "^0.2.1",
+    "remark-imgattr": "^1.0.5",
+    "remark-rehype": "^11.1.0",
     "typescript": "^5.4.4"
   },
   "devDependencies": {

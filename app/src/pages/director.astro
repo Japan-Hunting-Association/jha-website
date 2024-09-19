@@ -4,28 +4,61 @@ import { Image } from "astro:assets";
 import logo from "@assets/logo.svg";
 import PersonCard from "@components/Director/PersonCard.astro";
 import icon_yunoda from "@assets/icon_yunoda.png";
+import icon_tokisaba from "@assets/icon_yunoda.png";
+import icon_tokutani from "@assets/icon_yunoda.png";
 const directors = [
-  { 
-    name: 'yunoda',
-    sns: 'https://x.com/yunoda_hunting',
-    icon: icon_yunoda,
-    role:'代表理事',
-    description: `
-        第一期代表理事を務めるyunodaです。
-        狩猟を始めてみると、さまざまな問題に悩まされていることを実感し、この協会を立ち上げました。
-        狩猟界隈はドキュメント文化が非常に薄く、さまざまな情報にアクセスすることが困難です。
-        これをまず第一の改善点として、微力ではありますが、協会一同挑戦してまいります。
-    ` },
+{
+        name: "yunoda",
+        sns: "https://x.com/yunoda_hunting",
+        icon: icon_yunoda,
+        role: "代表理事",
+        description: `
+            第一期代表理事を務めるyunodaです。
+            狩猟を始めてみると、さまざまな問題に悩まされていることを実感し、この協会を立ち上げました。
+            狩猟界隈はドキュメント文化が非常に薄く、さまざまな情報にアクセスすることが困難です。
+            これをまず第一の改善点として、微力ではありますが、協会一同挑戦してまいります。
+        `,
+    },
+    {
+        name: "tokisaba",
+        sns: "https://x.com/",
+        icon: icon_tokisaba,
+        role: "理事",
+        description: `
+
+        `,
+    },
+    {
+        name: "tokutani",
+        sns: "https://x.com/",
+        icon: icon_tokutani,
+        role: "理事",
+        description: `
+
+        `,
+    },
 ];
 ---
 
 <Layout title="日本狩猟協会について">
-    <section>
-        <h1 class="flex justify-center items-center align-middle text-center font-bold text-4xl">構成理事</h1>
-        <div class="m-8">
-            {directors.map(director => (
-                <PersonCard name={ director.name } sns={ director.sns } icon={ director.icon } role={ director.role } description={ director.description }/>
-            ))}
+    <section class="xl:mx-40 lg:mx-20 md:mx-10 mx-5 my-20">
+        <h1
+            class="flex justify-center items-center align-middle text-center font-bold text-4xl my-10"
+        >
+            構成理事
+        </h1>
+        <div class="flex flex-col gap-8">
+            {
+                directors.map((director) => (
+                    <PersonCard
+                        name={director.name}
+                        sns={director.sns}
+                        icon={director.icon}
+                        role={director.role}
+                        description={director.description}
+                    />
+                ))
+            }
         </div>
     </section>
 </Layout>

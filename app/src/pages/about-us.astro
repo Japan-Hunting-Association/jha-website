@@ -33,27 +33,27 @@ import SectionCard from "@components/AboutUs/SectionCard.astro";
             われわれは、日本の狩猟環境が停滞していくことを最も危惧しています。
         </div>
         <div class="message">たとえば、</div>
-        <div class="message">
+        <div class="message flex gap-8">
             <Image
                 src={image_problem_1}
                 alt=""
-                class="w-64 h-64 rounded-2xl m-16"
+                class="w-64 h-64 rounded-2xl"
             />
             <div>狩猟人口の高齢化に伴う地方ハンターの激減</div>
         </div>
-        <div class="message">
+        <div class="message flex gap-8">
             <Image
                 src={image_problem_2}
                 alt=""
-                class="w-64 h-64 rounded-2xl m-16"
+                class="w-64 h-64 rounded-2xl"
             />
             <div>旧態依然なハンターとお役所の有害鳥獣事業</div>
         </div>
-        <div class="message">
+        <div class="message flex gap-8">
             <Image
                 src={image_problem_3}
                 alt=""
-                class="w-64 h-64 rounded-2xl m-16"
+                class="w-64 h-64 rounded-2xl"
             />
             <div>IT化の遅れによる狩猟技術のシェアリング不足</div>
         </div>
@@ -74,11 +74,11 @@ import SectionCard from "@components/AboutUs/SectionCard.astro";
         <div class="message">
             日本狩猟協会は以下の五事業を提供し、日本の狩猟環境のアップデートに挑戦します。
         </div>
-        <div class="grid grid-cols-3 gap-12 m-20">
+        <div class="grid grid-cols-3 gap-12 mx-40">
             <SectionCard class="col-span-1" title="Hunter Community" image={ image_hunter_community } description="ハンター同士が情報交換したり交流できるコミュニティスペースです。"/>
             <SectionCard class="col-span-1" title="Hunter House" image={ image_hunter_house } description="ハンターが利用できる短期滞在・賃貸物件の紹介サービスです。"/>
             <SectionCard class="col-span-1" title="Hunter Tech" image={ image_hunter_tech } description="IoTやマイコンを駆使した狩猟技術のテック化プロジェクトです。"/>
-            <div class="col-span-3 flex justify-center gap-12">
+            <div class="col-span-3 flex justify-center gap-12 mx-40">
                 <SectionCard class="col-span-1" title="Hunter Knowledge" image={ image_hunter_knowledge } description="狩猟技術の保存とシェアを目指すドキュメントスペースです。"/>
                 <SectionCard class="col-span-1" title="Hunter Store" image={ image_hunter_store } description="ジビエ素材の利活用を促進するためのマーケットサービスです。"/>
             </div>
@@ -111,6 +111,6 @@ import SectionCard from "@components/AboutUs/SectionCard.astro";
 
 <style scoped>
     .message {
-        @apply flex justify-center items-center font-bold text-4xl h-screen m-20;
+        @apply flex justify-center items-center font-bold text-4xl h-screen m-40;
     }
 </style>

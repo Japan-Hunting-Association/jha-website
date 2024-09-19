@@ -17,6 +17,6 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro"
-, "src/components/Base/DarkModeButton.vue"  ],
+  ],
   "noImplicitAny": false
 }

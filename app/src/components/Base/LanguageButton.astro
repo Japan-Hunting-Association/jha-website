@@ -6,40 +6,16 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 const aboutURL_en=getRelativeLocaleUrl("en", url);
 const aboutURL_ja=getRelativeLocaleUrl("ja", url);
 
-const active_ja = Astro.currentLocale == 'ja' ? 'active' : '';
-const active_en = Astro.currentLocale == 'en' ? 'active' : '';
+const active_ja = Astro.currentLocale == 'ja' ? 'font-bold' : '';
+const active_en = Astro.currentLocale == 'en' ? 'font-bold' : '';
 ---
 
-<div class="language-select-field">
-    <a href={ aboutURL_ja } class=`language-select-button ${active_ja}`>
+<div class="flex w-full">
+    <a href={ aboutURL_ja } class=`${active_ja}`>
         JP
     </a>
-    <div class="separation">|</div>
-    <a href={ aboutURL_en } class=`language-select-button ${active_en}`>
+    <div class="mx-2">|</div>
+    <a href={ aboutURL_en } class=`${active_en}`>
         EN
     </a>
 </div>
-
-<style>
-.language-select-field {
-    display: flex;
-    margin: 0 20px 0 auto;
-}
-
-.language-select-button {
-    margin: auto 5px;
-    color: var(--color-text);
-}
-
-.separation {
-    margin: auto 5px;
-}
-
-.active {
-    font-weight: bold;
-}
-
-.passive {
-
-}
-</style>

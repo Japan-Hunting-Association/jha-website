@@ -9,23 +9,23 @@ const houses = await getCollection("house", ({ id }) => {
 ---
 
 <Layout title="ハンターハウスとは">
-    <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-8 xl:mx-40 lg:mx-20 md:mx-10 mx-5 mb-20">
         <div class="mt-8">
             <h2 class="text-3xl text-center font-bold">ハンターハウスとは</h2>
             <div class="my-4">
-                ハンターハウスは狩猟遠征の短期宿泊やお試し狩猟移住にご利用いただけるハンター向けシェアハウスです。当協会会員以外の方でもご利用いただけます。<br>
+                ハンターハウスは狩猟遠征の短期宿泊やお試し狩猟移住にご利用いただけるハンター向けシェアハウスです。一部物件は当協会会員以外の方でもご利用いただけます。<br>
                 物件によっては入居も可能です。これから猟を始める方や銃が置ける物件をお探しの方は、ぜひご相談ください。
             </div>
         </div>
         <div>
-            <h2 class="text-3xl font-bold my-4">提供中のハンターハウス</h2>
-            <div class="grid grid-cols-3 gap-4">
+            <h2 class="xl:text-3xl text-center font-bold my-4">提供中のハンターハウス</h2>
+            <div class="grid xl:grid-cols-3 gap-4">
                 {houses.map((house) => <HouseCard house_data={house} />)}
             </div>
         </div>
         <div class="divider"></div>
         <div>
-            <h2 class="text-3xl font-bold my-4">物件募集中</h2>
+            <h2 class="text-3xl text-center font-bold my-4">物件募集中</h2>
             <div class="my-2">
                 日本狩猟協会では、ハンターハウスの活動に協力してくれる方を募集しております。
             </div>
