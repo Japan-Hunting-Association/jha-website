@@ -7,6 +7,7 @@ const title = Astro.props.title ?? "一般社団法人日本狩猟協会";
 const twitterHandle = Astro.props.twitterHandle ?? "@hunters_japan";
 const description = Astro.props.description ?? "日本狩猟協会は、狩猟をアップデートする一般社団法人です。";
 const imageUrl = Astro.props.imageUrl ?? 'https://www.japan-hunting-association.or.jp/ogp/card_hd.jpg';
+const pageURL = Astro.props.pageURL ?? 'https://www.japan-hunting-association.or.jp/';
 ---
 
 <!doctype html>
@@ -70,6 +71,13 @@ const imageUrl = Astro.props.imageUrl ?? 'https://www.japan-hunting-association.
 		type="text/css"
 		href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
 		/>
+
+		<meta property="og:title" content={ title } />
+		<meta property="og:description" content={ description } />
+		<meta property="og:image" content={ imageUrl } />
+		<meta property="og:url" content={ pageURL } />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="一般社団法人日本狩猟協会" />
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content={ twitterHandle }>
 		<meta name="twitter:title" content={ title }>
