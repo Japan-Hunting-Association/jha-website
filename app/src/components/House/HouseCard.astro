@@ -10,7 +10,10 @@ import { Image } from 'astro:assets';
     <figure>
       <Image
         src={ house_data.data.cover }
-        alt="House Image" />
+        alt="House Image"
+        width={house_data.data.coverWidth}
+        height={house_data.data.coverHeight}
+      />
     </figure>
     <div class="card-body">
       <h2 class="card-title">

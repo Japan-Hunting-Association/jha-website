@@ -8,6 +8,8 @@ map_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d538.6244955196
 owner: 'yunoda'
 price: 準備中
 cover: '/ogp/yubari.jpg'
+coverWidth: 1000
+coverHeight: 400
 coverAlt: "hunter house in Yubari"
 lang: ja
 tags: [北海道, 鹿撃ち, 狩猟車あり, 個室あり, 解体場所あり]
