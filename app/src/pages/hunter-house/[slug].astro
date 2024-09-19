@@ -25,7 +25,12 @@ const coverURL = new URL(post.data.cover, siteUrl).toString();
 const pageURL = Astro.url;
 ---
 
-<Layout title={post.data.name} imageUrl={coverURL} pageURL={pageURL}>
+<Layout 
+    title={post.data.name} 
+    imageUrl={coverURL} 
+    pageURL={pageURL} 
+    description={post.data.description}
+>
     <div class="flex flex-col gap-4 xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 mx-5">
         <h1 class="text-center font-bold xl:text-5xl mt-20">{post.data.name}</h1>
         <div class="flex justify-end xl:m-12">
