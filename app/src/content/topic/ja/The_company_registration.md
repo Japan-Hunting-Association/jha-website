@@ -1,5 +1,6 @@
 ---
 title: '法人登記完了のご報告'
+isPublic: false
 pubDate: 2024-08-28
 description: '一般社団法人日本狩猟協会の法人登記が完了しました。'
 author: 'yunoda'

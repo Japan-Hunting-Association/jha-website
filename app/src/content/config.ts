@@ -4,6 +4,7 @@ import { z, defineCollection } from "astro:content";
 const topicCollection = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string().optional(),
+    isPublic: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
     pubDate: z.date().optional(),
     author: z.string().optional(),

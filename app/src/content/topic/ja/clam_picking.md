@@ -1,5 +1,6 @@
 ---
 title: '第一回江戸川潮干狩り　結果報告'
+isPublic: true
 pubDate: 2024-05-24
 description: '第一回江戸川潮干狩りの結果報告'
 author: 'yunoda'

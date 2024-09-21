@@ -4,8 +4,8 @@ import { Image } from "astro:assets";
 import logo from "@assets/logo.svg";
 import PersonCard from "@components/Director/PersonCard.astro";
 import icon_yunoda from "@assets/icon_yunoda.png";
-import icon_tokisaba from "@assets/icon_yunoda.png";
-import icon_tokutani from "@assets/icon_yunoda.png";
+import icon_tokisaba from "@assets/icon_tokisaba.png";
+import icon_tokutani from "@assets/icon_unknown.jpg";
 const directors = [
 {
         name: "yunoda",
@@ -20,17 +20,19 @@ const directors = [
         `,
     },
     {
-        name: "tokisaba",
-        sns: "https://x.com/",
+        name: "北村直樹",
+        sns: "https://x.com/tokisaba",
         icon: icon_tokisaba,
         role: "理事",
         description: `
-
+            HNはtokisaba。ITエンジニア。
+            東京を中心にITエンジニアのためのシェアハウスを運営している。地方創生と生活の多様性を一つのテーマにしている。
+            狩猟と地方の空き家はいい組み合わせになりそうで、モンスターハンターの村のような狩猟特化集落とか作ってみたい。猟師としてはペーペーなので、まずは業界のことをあれこれ知りたい。
         `,
     },
     {
         name: "tokutani",
-        sns: "https://x.com/",
+        sns: "https://x.com/bucca_boo",
         icon: icon_tokutani,
         role: "理事",
         description: `

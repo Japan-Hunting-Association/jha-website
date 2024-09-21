@@ -1,5 +1,6 @@
 ---
 title: 'The incorporation of Japan Hunting Association has been completed.'
+isPublish: false
 pubDate: 2024-07-03
 description: ''
 author: 'yunoda'
