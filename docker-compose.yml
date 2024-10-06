@@ -6,7 +6,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app
-    working_dir: /app
+    working_dir: /app/app
+    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
     ports:
       - "4321:4321"
     stdin_open: true

@@ -1,17 +1,66 @@
 ---
 import Layout from "@layouts/Layout.astro";
+const plans = [
+    {
+        title: '賛助会員',
+        price: '会費1,000円/年',
+        summary: `
+        日本狩猟協会の提供サービスを利用する方におすすめです。
+        `,
+        benefits: [
+            'ハンターハウスが利用できます。',
+            '狩猟ツアーや狩猟レッスンに参加できます。',
+            'ハンター保険に加入できます（準備中）',
+        ]
+    },
+    {
+        title: '正会員',
+        price: '会費1,000円/年',
+        summary: `
+        一緒に狩猟業界をアップデートしていきたい方向けです。
+        報酬はありません。
+        `,
+        benefits: [
+            '社員総会で議決権が使えます。',
+            'ハンターハウスが利用できます。',
+            'ハンター保険に加入できます（準備中）',
+            '週一回の進捗会議があります。',
+            '退会は自由です。逆にキックもあります。'
+        ]
+    }
+]
 ---
 
 <Layout title="会員になるには">
-    <div class="mx-40">
+    <div class="xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 mx-5">
         <div class="text-center text-4xl font-bold m-12">会員になるには</div>
+        
         <div class="my-16">
-            日本狩猟協会では、時期を問わず会員を募集しています。<br />
-            注意点として、当協会は非営利型一般社団法人であるため、<strong>基本的にはボランティア活動</strong>になります。<br />
-            活動にかかる経費も寄付による工面に頼ることになるため、活動費等も十分にお出しできないことをご了承ください。<br
-            />
+            日本狩猟協会では、時期を問わず賛助会員と正会員を募集しています。<br />
+            当協会は非営利型一般社団法人であるため、<strong>協会が行う活動はすべてボランティア活動</strong>になります。<br />
+            正会員になられましても、活動にかかる経費は寄付や会費に頼るため、活動費を十分にお出しできないことをご了承ください。<br/>
             それでも日本の狩猟業界を良くしたいという志のある方は、われわれも最大限バックアップいたしますので、ぜひお気軽にコンタクトをいただければと思います。
         </div>
+
+        <div class="my-8 flex gap-4">
+            { plans.map((plan) => (
+                <div class="flex flex-col gap-4 w-1/2 border-2 rounded-3xl p-4">
+                    <div class="p-4">
+                        <div class="text-2xl font-bold text-center">{plan.title}</div>
+                        <div class="text-md font-bold text-center">{plan.price}</div>
+                    </div>
+                    <div class="px-8 text-sm">
+                        <p>{plan.summary}</p>
+                    </div>
+                    <ul class="list-none px-8 space-y-1">
+                        {plan.benefits.map((benefit)=>
+                            <li><i class="ph ph-check"></i>{benefit}</li>
+                        )}
+                    </ul>
+                </div>
+            ))}
+        </div>
+
         <div class="bg-gray-200 rounded-xl p-8">
             <p>
                 <i class="ph ph-cards"></i>
@@ -23,42 +72,23 @@ import Layout from "@layouts/Layout.astro";
                 ここにないスキルでもあなたを活かすポジションは無数にありますので、ぜひお気軽にコンタクトください。
             </p>
         </div>
+
         <div class="container mx-auto p-6">
-            <div class="my-16">
-                <h1 class="text-2xl font-bold mb-4">注意事項</h1>
-                <ul class="list-disc list-inside space-y-2">
-                    <li class="text-lg">入会費、会費はありません。</li>
-                    <li class="text-lg">
-                        週一回の進捗確認ミーティングがあります。
-                    </li>
-                    <li class="text-lg">
-                        非営利型一般社団法人のため、活動に対する報酬はありません。
-                    </li>
-                    <li class="text-lg">
-                        自分ができることで貢献していただけるだけで大丈夫です！
-                    </li>
-                    <li class="text-lg">
-                        退会は自由です。狩猟環境の変化や鉄砲引退も含めてご相談ください。
-                    </li>
-                </ul>
-            </div>
             <div class="my-16">
                 <h2 class="text-2xl font-bold mb-2">入会の流れ</h2>
                 <ol class="list-decimal list-inside space-y-2">
                     <li class="text-lg">
-                        X, discord,
-                        facebookのいずれかで入会表明をポストしてください
+                        X, discord, facebookのいずれかで入会表明をポストしてください
                     </li>
                     <li class="text-lg">
                         協会メンバーからのご連絡差し上げます
                     </li>
                     <li class="text-lg">
-                        ヒアリングと活動内容の説明をオンラインで行います
+                        ヒアリングをオンラインで行います
                     </li>
                     <li class="text-lg">
                         正式入会するかどうか決めてもらいます
                     </li>
-                    <li class="text-lg">メンバーとの顔合わせをします</li>
                 </ol>
             </div>
         </div>

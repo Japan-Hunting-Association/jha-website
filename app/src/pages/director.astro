@@ -1,13 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { Image } from "astro:assets";
-import logo from "@assets/logo.svg";
 import PersonCard from "@components/Director/PersonCard.astro";
 import icon_yunoda from "@assets/icon_yunoda.png";
 import icon_tokisaba from "@assets/icon_tokisaba.png";
-import icon_tokutani from "@assets/icon_unknown.jpg";
+import icon_tokutani from "@assets/icon_tokutani.jpg";
 const directors = [
-{
+    {
         name: "yunoda",
         sns: "https://x.com/yunoda_hunting",
         icon: icon_yunoda,
@@ -36,7 +34,10 @@ const directors = [
         icon: icon_tokutani,
         role: "理事",
         description: `
-
+        北海道夕張市在住、趣味は釣り。
+        現在罠免許に挑戦しています。
+        北海道は鹿や熊の被害が多いので、なんとか駆除及び有効活用できないかと考えています。
+        北海道に狩猟に来られる際はよろしくお願いします。
         `,
     },
 ];
