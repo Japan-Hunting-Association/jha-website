@@ -1,0 +1,25 @@
+name: Check Astro Build
+
+on:
+  push:
+    branches:
+      - '**'  # 任意のブランチ
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # プロジェクトに合わせて変更
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check Astro build
+        run: npm run build  # package.json の build スクリプトが astro build を呼び出している必要があります
