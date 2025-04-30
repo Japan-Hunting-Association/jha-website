@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/_layout.astro";
+---
+
+<Layout title="報告書等" description="活動報告書、会計報告書、定期会員総会議事録などの報告書を掲載しています。">
+    <div class="flex flex-col gap-8 xl:mx-40 lg:mx-20 md:mx-10 mx-5 mb-20 min-h-screen">
+        <div class="mt-8">
+            <h1 class="text-3xl text-center font-bold my-8">
+                報告書等について
+            </h1>
+            <p class="text-center text-lg">
+                活動報告書、会計報告書、定期会員総会議事録などの報告書を掲載しています。
+            </p>
+        </div>
+        <div class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+            <table class="table">
+                <!-- head -->
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>活動報告書</th>
+                    <th>会計報告書</th>
+                    <th>定期会員総会議事録</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- row 1 -->
+                <tr>
+                    <th>2024年度</th>
+                    <td>
+                    <a href="/reports/annual_activity_report_2024.pdf" class="text-blue-500" download="annual_activity_report_2024.pdf">
+                        活動報告書_2024.pdf
+                    </a>
+                    </td>
+                    <td>
+                    <a href="/reports/annual_financial_report_2024.pdf" class="text-blue-500" download="annual_financial_report_2024.pdf">
+                        会計報告書_2024.pdf
+                    </a>
+                    </td>
+                    <td>
+                    <a href="/reports/annual_general_meeting_2024.pdf" class="text-blue-500" download="annual_general_meeting_2024.pdf">
+                        定期会員総会議事録_2024.pdf
+                    </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</Layout>

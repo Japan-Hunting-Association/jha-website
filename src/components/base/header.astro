@@ -1,0 +1,26 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.svg";
+import name from "@/assets/association-name.png";
+// import LanguageButton from "@components/Base/LanguageButton.astro";
+---
+
+<div class="navbar xl:px-40 flex items-center h-16">
+  <div class="basis-1/3 flex justify-start">
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/")}>
+      <Image src={logo} alt="" class="object-contain h-10 w-10" />
+    </a>
+  </div>
+  <div class="basis-1/3 flex justify-center">
+    <Image
+      src={name}
+      alt=""
+      class="xl:w-60 lg:w-48 md:w-40 sm:w-40 w-36"
+    />
+  </div>
+  <div class="">
+    <!-- <LanguageButton /> 英語での運営体制が整うまで、一旦無効化しました。 --> 
+  </div>
+</div>

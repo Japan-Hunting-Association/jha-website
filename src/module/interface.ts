@@ -25,18 +25,6 @@ export default interface Product {
     page_url: string
 }
 
-interface Beer {
-    id: string,
-    name: string,
-    alcohol: number,
-    brewery: Brewery
-}
-
-interface Brewery {
-    name: string,
-    place: string
-}
-
 interface TopicCategory {
     name_en: string,
     name_ja: string

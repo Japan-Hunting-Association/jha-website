@@ -1,9 +1,7 @@
 ---
-import { getBaseURL } from '@util/url';
-
-const { house_data } = Astro.props;
+import { getBaseURL } from '@/util/url';
 import { Image } from 'astro:assets';
-
+const { house_data } = Astro.props;
 ---
 
 <a href={ `hunter-house/${getBaseURL(house_data.slug)}` } class="card bg-base-100 w-auto shadow-xl">

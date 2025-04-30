@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import imgAttr from 'remark-imgattr';
-
+import path from 'path';
 // https://astro.build/config
 export default defineConfig({
   i18n: {
