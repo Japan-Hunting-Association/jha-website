@@ -21,8 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check aliases
-        run: ls -R src/components
-
       - name: Check Astro build
         run: npm run build  # package.json の build スクリプトが astro build を呼び出している必要があります

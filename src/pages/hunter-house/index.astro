@@ -1,6 +1,6 @@
 ---
-import Layout from "@layouts/_layout.astro";
-import HouseCard from "@components/house/house-card.astro";
+import Layout from "@/layouts/_layout.astro";
+import HouseCard from "@/components/house/house-card.astro";
 
 import { getCollection } from "astro:content";
 const houses = await getCollection("house", ({ id }) => {

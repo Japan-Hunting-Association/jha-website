@@ -4,13 +4,6 @@ import imgAttr from 'remark-imgattr';
 import path from 'path';
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    resolve: {
-      alias: {
-        '@components': new URL('./src/components', import.meta.url).pathname,
-      },
-    },
-  },
   i18n: {
     defaultLocale: 'ja',
     locales: ['ja', 'en'],

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getBaseURL } from '@util/url';
+import { getBaseURL } from '@/util/url';
 
 const posts = await getCollection('topic', ({ id }) => {
   return id.startsWith(Astro.currentLocale+'/');
