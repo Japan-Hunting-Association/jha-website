@@ -3,8 +3,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "@/components/*": ["src/components/*"],
+      "@/layouts/*": ["src/layouts/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/module/*": ["src/module/*"],
+      "@/assets/*": ["src/assets/*"],
+      "@/util/*": ["src/util/*"],
+      "@/content/*": ["src/content/*"],
+      "@/i18n/*": ["src/i18n/*"],
     }
   },
   "include": [
