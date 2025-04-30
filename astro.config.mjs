@@ -1,9 +1,16 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import imgAttr from 'remark-imgattr';
-
+import path from 'path';
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@components': path.resolve('./src/components'),
+      },
+    },
+  },
   i18n: {
     defaultLocale: 'ja',
     locales: ['ja', 'en'],
