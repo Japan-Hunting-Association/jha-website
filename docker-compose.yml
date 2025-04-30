@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app
+      - /app/node_modules
     working_dir: /app
     command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
     ports:
