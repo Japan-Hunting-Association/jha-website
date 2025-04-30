@@ -5,13 +5,6 @@ import path from 'node:path';
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    resolve: {
-      alias: {
-        '@': path.resolve(new URL('./src', import.meta.url).pathname),
-      },
-    },
-  },
   i18n: {
     defaultLocale: 'ja',
     locales: ['ja', 'en'],
