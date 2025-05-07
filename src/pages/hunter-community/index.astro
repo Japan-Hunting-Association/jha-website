@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/_layout.astro";
+import { Image } from "astro:assets";
+import img_union_facebook from "@/assets/online-hunter-union/online-hunter-union-facebook.jpg";
+import img_union_discord from "@/assets/online-hunter-union/online-hunter-union-discord.jpg";
+---
+
+<Layout title="ハンターコミュニティ">
+    <div
+        class="flex flex-col gap-8 xl:mx-40 lg:mx-20 md:mx-10 mx-5 mb-20 min-h-screen"
+    >
+        <div class="mt-8">
+            <h1 class="text-3xl text-center font-bold">
+                ハンターコミュニティとは
+            </h1>
+            <div class="my-4">
+                日本狩猟協会は、「オンライン猟遊会」というハンター向けコミュニティを運営しています。どなたでもご参加いただけます。
+            </div>
+            <div class="flex flex-col gap-8 my-16 sm:flex-row">
+                <div>
+                    <h2 class="font-bold text-5xl text-center p-4">
+                        <i class="ph ph-facebook-logo"></i>
+                        facebook
+                    </h2>
+                    <a href="https://www.facebook.com/share/ZU28pn7NwZk5jadD/" class="w-1/2 hover:shadow-xl">
+                        <Image
+                            class="aspect-square object-cover rounded-xl"
+                            src={img_union_facebook}
+                            alt="facebook community image"
+                            width={1000}
+                        />
+                    </a>
+                </div>
+                <div>
+                    <h2 class="font-bold text-5xl text-center p-4">
+                        <i class="ph ph-discord-logo"></i>
+                        discord
+                    </h2>
+                    <a href="https://discord.gg/7d9e5r8sae" class="w-1/2 hover:shadow-xl">
+                        <Image
+                            class="aspect-square object-cover rounded-xl"
+                            src={img_union_discord}
+                            alt="discord community image"
+                            width={1000}
+                        />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

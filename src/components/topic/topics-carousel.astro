@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import { getBaseURL } from '@/util/url';
+
+const posts = await getCollection('topic', ({ id }) => {
+  return id.startsWith(Astro.currentLocale+'/');
+});
+
+const sortedPosts = posts.sort((a, b) => {
+  // 型ガードを追加してpubDateが有効であることを確認
+  const dateA = a.data.pubDate ? new Date(a.data.pubDate) : new Date(0);
+  const dateB = b.data.pubDate ? new Date(b.data.pubDate) : new Date(0);
+
+  return dateB.getTime() - dateA.getTime(); // 降順にソート});
+})
+---
+<div class="flex flex-col gap-2">
+{posts.map((post) => (post.data.isPublic ?
+  <div class="flex gap-4">
+    <time datetime={post.data.pubDate?.toISOString()} class="fit-content px-2 bg-orange text-white my-auto">
+      { new Intl.DateTimeFormat('ja-JP').format(post.data.pubDate) }
+    </time>
+    <a href={ `topic/${getBaseURL(post.slug)}` }>
+      { post.data.title }
+    </a>
+  </div>
+  :
+  <></>
+))}
+</div>

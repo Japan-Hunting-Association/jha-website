@@ -1,4 +1,6 @@
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app
-COPY ./app /app
+COPY ./ /app
+RUN npm ci
+COPY . .
 EXPOSE 4321

@@ -1,0 +1,21 @@
+---
+import { getBaseURL } from "@/util/url"
+const url = getBaseURL(Astro.url.pathname);
+
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const aboutURL_en=getRelativeLocaleUrl("en", url);
+const aboutURL_ja=getRelativeLocaleUrl("ja", url);
+
+const active_ja = Astro.currentLocale == 'ja' ? 'font-bold' : '';
+const active_en = Astro.currentLocale == 'en' ? 'font-bold' : '';
+---
+
+<div class="flex w-full">
+    <a href={ aboutURL_ja } class=`${active_ja}`>
+        JP
+    </a>
+    <div class="mx-2">|</div>
+    <a href={ aboutURL_en } class=`${active_en}`>
+        EN
+    </a>
+</div>

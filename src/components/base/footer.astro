@@ -1,0 +1,79 @@
+---
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@/i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<footer class="bg-gray-100 footer p-10 xl:px-40 text-base-content">
+  <nav>
+    <h6 class="footer-title">Services</h6>
+    <a href="/hunter-community" class="link link-hover">Hunter Community</a>
+    <a href="/hunter-house" class="link link-hover">Hunter House</a>
+    <a class="link link-hover">Hunter Knowledge</a>
+    <a class="link link-hover">Hunter Store</a>
+    <a class="link link-hover">Hunter Tech</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Association</h6>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/about-us")}>
+      {t("footer.about-us")}
+    </a>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/directors")}>
+      {t("footer.director")}
+    </a>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/join")}>
+      {t("footer.join")}
+    </a>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/association")}>
+      {t("footer.association")}
+    </a>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/reports")}>
+      活動報告書
+    </a>
+    <!-- <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/recruitment")}>
+      {t("footer.recruit")}
+    </a> -->
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/privacy")}>
+      {t("footer.privacy")}
+    </a>
+    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/contact")}>
+      {t("footer.contact")}
+    </a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Social</h6>
+    <div class="grid grid-flow-col gap-4">
+      <!-- <a
+        href="https://www.tiktok.com/@hunters_japan"
+        target="blank"
+      >
+        <i class="ph ph-tiktok-logo text-4xl"></i>
+      </a> -->
+      <!-- <a
+        href="https://www.youtube.com/channel/UC7-Ydwf_-X5QG_bPrgEWflQ"
+        target="blank"
+      >
+        <i class="ph ph-youtube-logo text-4xl"></i>
+      </a> -->
+      <a href="https://x.com/hunters_japan" target="blank" class="sns-logo">
+        <i class="ph ph-x-logo text-4xl"></i>
+      </a>
+      <a href="https://discord.gg/7d9e5r8sae" target="blank" class="sns-logo">
+        <i class="ph ph-discord-logo text-4xl"></i>
+      </a>
+      <a href="https://www.facebook.com/share/ZU28pn7NwZk5jadD/" target="blank" class="sns-logo">
+        <i class="ph ph-facebook-logo text-4xl"></i>
+      </a>
+    </div>
+  </nav>
+</footer>
+<div class="bg-gray-100 flex-none text-center text-base-content text-xs py-2">
+  Copyright © Japan Hunting Association. All Rights Reserved.
+</div>

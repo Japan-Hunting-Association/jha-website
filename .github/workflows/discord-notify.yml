@@ -1,0 +1,37 @@
+name: Notify Discord
+
+on:
+  pull_request:
+    types: [closed]
+  issues:
+    types: [opened]
+  release:
+    types: [published]
+
+jobs:
+  discord_notification:
+    if: |
+      github.event.pull_request.merged == true || 
+      github.event_name == 'issues' ||
+      github.event_name == 'release'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send notification to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" && "${{ github.event.pull_request.merged }}" == "true" ]]; then
+            TEXT="✅ プルリクがマージされました！\nタイトル: ${{ github.event.pull_request.title }}\n作成者: ${{ github.event.pull_request.user.login }}\nURL: ${{ github.event.pull_request.html_url }}"
+          elif [[ "${{ github.event_name }}" == "issues" ]]; then
+            TEXT="🐛 新しい Issue が作成されました！\nタイトル: ${{ github.event.issue.title }}\n作成者: ${{ github.event.issue.user.login }}\nURL: ${{ github.event.issue.html_url }}"
+          elif [[ "${{ github.event_name }}" == "release" ]]; then
+            TEXT="📦 新しいリリースが作成されました！\nリリース名: ${{ github.event.release.name }}\n作成者: ${{ github.event.release.author.login }}\nURL: ${{ github.event.release.html_url }}"
+          else
+            TEXT="⚠️ 不明なイベントです。"
+          fi
+
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"$TEXT\"}" \
+               $DISCORD_WEBHOOK_URL

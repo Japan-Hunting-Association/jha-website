@@ -1,0 +1,115 @@
+---
+import Layout from "@/layouts/_layout.astro";
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.svg";
+import image_problem_1 from "@/assets/problem1.jpg";
+import image_problem_2 from "@/assets/problem2.jpg";
+import image_problem_3 from "@/assets/problem3.jpg";
+import image_hunter_community from "@/assets/hunter-community.jpg";
+import image_hunter_house from "@/assets/hunter-house.jpg";
+import image_hunter_tech from "@/assets/hunter-tech.jpg";
+import image_hunter_knowledge from "@/assets/hunter-knowledge.jpg";
+import image_hunter_store from "@/assets/hunter-store.jpg";
+import SectionCard from "@/components/about-us/section-card.astro";
+---
+
+<Layout title="日本狩猟協会について">
+    <sction>
+        <div
+            class="flex justify-center items-center align-middle text-center font-bold text-6xl h-screen"
+        >
+            Update Hunting!
+        </div>
+        <div class="flex justify-center items-center h-screen">
+            <Image src={logo} alt="" class="w-64 h-64" />
+        </div>
+    </sction>
+    <sction>
+        <div class="message">
+            日本狩猟協会は、日本の狩猟環境をアップデートするために有志で結成された狩猟団体です。
+        </div>
+        <div class="message">
+            われわれは、日本の狩猟環境が停滞していくことを最も危惧しています。
+        </div>
+        <div class="message">たとえば、</div>
+        <div class="message flex gap-8">
+            <Image
+                src={image_problem_1}
+                alt=""
+                class="w-64 h-64 rounded-2xl"
+            />
+            <div>狩猟人口の高齢化に伴う地方ハンターの激減</div>
+        </div>
+        <div class="message flex gap-8">
+            <Image
+                src={image_problem_2}
+                alt=""
+                class="w-64 h-64 rounded-2xl"
+            />
+            <div>旧態依然なハンターとお役所の有害鳥獣事業</div>
+        </div>
+        <div class="message flex gap-8">
+            <Image
+                src={image_problem_3}
+                alt=""
+                class="w-64 h-64 rounded-2xl"
+            />
+            <div>IT化の遅れによる狩猟技術のシェアリング不足</div>
+        </div>
+        <div class="message">
+            これらの問題は、テクノロジーの導入や官民一体となった行政システムのチューニングによって解決できると信じています。
+        </div>
+        <div class="message">
+            しかし、これらは待っているだけではなにも変わりません。
+        </div>
+        <div class="message">
+            だれかが「アップデート」する必要があるのです。
+        </div>
+        <div class="message">
+            それが日本狩猟協会の存在意義であり、ミッションです。
+        </div>
+    </sction>
+    <sction>
+        <div class="message">
+            日本狩猟協会は以下の五事業を提供し、日本の狩猟環境のアップデートに挑戦します。
+        </div>
+        <div class="grid grid-cols-3 gap-12 mx-40">
+            <SectionCard class="col-span-1" title="Hunter Community" image={ image_hunter_community } description="ハンター同士が情報交換したり交流できるコミュニティスペースです。"/>
+            <SectionCard class="col-span-1" title="Hunter House" image={ image_hunter_house } description="ハンターが利用できる短期滞在・賃貸物件の紹介サービスです。"/>
+            <SectionCard class="col-span-1" title="Hunter Tech" image={ image_hunter_tech } description="IoTやマイコンを駆使した狩猟技術のテック化プロジェクトです。"/>
+            <div class="col-span-3 flex justify-center gap-12 mx-40">
+                <SectionCard class="col-span-1" title="Hunter Knowledge" image={ image_hunter_knowledge } description="狩猟技術の保存とシェアを目指すドキュメントスペースです。"/>
+                <SectionCard class="col-span-1" title="Hunter Store" image={ image_hunter_store } description="ジビエ素材の利活用を促進するためのマーケットサービスです。"/>
+            </div>
+        </div>
+    </sction>
+    <sction>
+        <div class="message">
+            これらの五事業は、わたしたちが狩猟界隈に不足していると感じるものといっても過言ではありません。
+        </div>
+        <div class="message">
+            <ul>
+                <li>拠点がない</li>
+                <li>仲間がいない</li>
+                <li>市場がない</li>
+                <li>情報がない</li>
+                <li>効率的でない</li>                
+            </ul>
+        </div>
+        <div class="message">
+            われわれの活動を通じて、すこしでも日本の狩猟環境が前進することがあれば幸いです。
+        </div>
+    </sction>
+    <sction>
+        <div class="message">
+            <p>また同時に、日本狩猟協会は同じ価値観をともに活動してくれる仲間（会員）を募集しています。
+            詳しくは<a href="/join" class="text-blue-500 underline hover:text-blue-700 inline">こちら</a>から。</p>
+        </div>
+    </sction>
+</Layout>
+
+<style scoped>
+    .message {
+        @apply flex justify-center items-center font-bold text-4xl h-screen m-40;
+    }
+</style>
