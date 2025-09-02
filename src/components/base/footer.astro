@@ -11,69 +11,159 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<footer class="bg-gray-100 footer p-10 xl:px-40 text-base-content">
-  <nav>
-    <h6 class="footer-title">Services</h6>
-    <a href="/hunter-community" class="link link-hover">Hunter Community</a>
-    <a href="/hunter-house" class="link link-hover">Hunter House</a>
-    <a class="link link-hover">Hunter Knowledge</a>
-    <a class="link link-hover">Hunter Store</a>
-    <a class="link link-hover">Hunter Tech</a>
-  </nav>
-  <nav>
-    <h6 class="footer-title">Association</h6>
-    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/about-us")}>
-      {t("footer.about-us")}
-    </a>
-    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/directors")}>
-      {t("footer.director")}
-    </a>
-    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/join")}>
-      {t("footer.join")}
-    </a>
-    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/association")}>
-      {t("footer.association")}
-    </a>
-    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/reports")}>
-      活動報告書
-    </a>
-    <!-- <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/recruitment")}>
-      {t("footer.recruit")}
-    </a> -->
-    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/privacy")}>
-      {t("footer.privacy")}
-    </a>
-    <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/contact")}>
-      {t("footer.contact")}
-    </a>
-  </nav>
-  <nav>
-    <h6 class="footer-title">Social</h6>
-    <div class="grid grid-flow-col gap-4">
-      <!-- <a
-        href="https://www.tiktok.com/@hunters_japan"
-        target="blank"
-      >
-        <i class="ph ph-tiktok-logo text-4xl"></i>
-      </a> -->
-      <!-- <a
-        href="https://www.youtube.com/channel/UC7-Ydwf_-X5QG_bPrgEWflQ"
-        target="blank"
-      >
-        <i class="ph ph-youtube-logo text-4xl"></i>
-      </a> -->
-      <a href="https://x.com/hunters_japan" target="blank" class="sns-logo">
-        <i class="ph ph-x-logo text-4xl"></i>
-      </a>
-      <a href="https://discord.gg/7d9e5r8sae" target="blank" class="sns-logo">
-        <i class="ph ph-discord-logo text-4xl"></i>
-      </a>
-      <a href="https://www.facebook.com/share/ZU28pn7NwZk5jadD/" target="blank" class="sns-logo">
-        <i class="ph ph-facebook-logo text-4xl"></i>
-      </a>
+<footer class="bg-white border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+      <!-- 協会情報 -->
+      <div class="md:col-span-1">
+        <div class="text-lg tracking-wider font-normal mb-6">日本狩猟協会</div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-8">
+          一般社団法人<br />
+          狩猟業界のIT化推進団体
+        </p>
+        
+        <!-- ソーシャルメディア -->
+        <div class="flex space-x-6">
+          <a href="https://www.facebook.com/share/ZU28pn7NwZk5jadD/" target="_blank" class="text-gray-400 hover:text-black transition-colors duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://x.com/hunters_japan" target="_blank" class="text-gray-400 hover:text-black transition-colors duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://discord.gg/7d9e5r8sae" target="_blank" class="text-gray-400 hover:text-black transition-colors duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- PROGRAMS -->
+      <div>
+        <h3 class="text-xs tracking-wider text-gray-500 mb-6">PROGRAMS</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/safety-education")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              安全教育
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/it-training")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              IT研修
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/technical-training")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              技術講習
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/certification")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              認定制度
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ACTIVITIES -->
+      <div>
+        <h3 class="text-xs tracking-wider text-gray-500 mb-6">ACTIVITIES</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/wildlife-management")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              野生動物管理
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/data-analysis")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              データ分析
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/industry-research")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              業界調査
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/policy-proposals")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              政策提言
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SUPPORT -->
+      <div>
+        <h3 class="text-xs tracking-wider text-gray-500 mb-6">SUPPORT</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/faq")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              よくある質問
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/contact")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              お問い合わせ
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/tech-support")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              技術サポート
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/member-support")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              会員サポート
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ORGANIZATION -->
+      <div>
+        <h3 class="text-xs tracking-wider text-gray-500 mb-6">ORGANIZATION</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/about-us")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              協会概要
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/directors")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              理事会
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/reports")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              活動報告
+            </a>
+          </li>
+          <li>
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/join")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              会員募集
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </nav>
+
+    <!-- コピーライト -->
+    <div class="border-t border-gray-100 mt-16 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <p>© 2024 一般社団法人 日本狩猟協会 All rights reserved.</p>
+        <div class="flex space-x-8 mt-4 md:mt-0">
+          <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/privacy")} class="hover:text-black transition-colors duration-200">
+            プライバシーポリシー
+          </a>
+          <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/terms")} class="hover:text-black transition-colors duration-200">
+            利用規約
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
-<div class="bg-gray-100 flex-none text-center text-base-content text-xs py-2">
-  Copyright © Japan Hunting Association. All Rights Reserved.
-</div>
