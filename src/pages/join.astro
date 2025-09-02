@@ -31,66 +31,71 @@ const plans = [
 ]
 ---
 
-<Layout title="会員になるには">
-    <div class="xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 mx-5">
-        <div class="text-center text-4xl font-bold m-12">会員になるには</div>
-        
-        <div class="my-16">
-            日本狩猟協会では、時期を問わず賛助会員と正会員を募集しています。<br />
-            当協会は非営利型一般社団法人であるため、<strong>協会が行う活動はすべてボランティア活動</strong>になります。<br />
-            正会員になられましても、活動にかかる経費は寄付や会費に頼るため、活動費を十分にお出しできないことをご了承ください。<br/>
-            それでも日本の狩猟業界を良くしたいという志のある方は、われわれも最大限バックアップいたしますので、ぜひお気軽にコンタクトをいただければと思います。
-        </div>
+<Layout title="会員になるには | 日本狩猟協会">
+    <main class="container mx-auto px-4 pt-36 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-8">会員になるには</h1>
+            
+            <div class="prose prose-lg max-w-none mb-12">
+                <p class="text-gray-600">
+                    日本狩猟協会では、時期を問わず賛助会員と正会員を募集しています。<br />
+                    当協会は非営利型一般社団法人であるため、<strong>協会が行う活動はすべてボランティア活動</strong>になります。<br />
+                    正会員になられましても、活動にかかる経費は寄付や会費に頼るため、活動費を十分にお出しできないことをご了承ください。<br/>
+                    それでも日本の狩猟業界を良くしたいという志のある方は、われわれも最大限バックアップいたしますので、ぜひお気軽にコンタクトをいただければと思います。
+                </p>
+            </div>
 
-        <div class="my-8 flex gap-4">
-            { plans.map((plan) => (
-                <div class="flex flex-col gap-4 w-1/2 border-2 rounded-3xl p-4">
-                    <div class="p-4">
-                        <div class="text-2xl font-bold text-center">{plan.title}</div>
-                        <div class="text-md font-bold text-center">{plan.price}</div>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                { plans.map((plan) => (
+                    <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-orange transition-colors">
+                        <div class="text-center mb-6">
+                            <h2 class="text-2xl font-bold mb-2">{plan.title}</h2>
+                            <p class="text-lg text-gray-600">{plan.price}</p>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-gray-600">{plan.summary}</p>
+                        </div>
+                        <ul class="space-y-2">
+                            {plan.benefits.map((benefit)=>
+                                <li class="flex items-start">
+                                    <i class="ph ph-check text-green-500 mr-2 mt-1"></i>
+                                    <span class="text-gray-700">{benefit}</span>
+                                </li>
+                            )}
+                        </ul>
                     </div>
-                    <div class="px-8 text-sm">
-                        <p>{plan.summary}</p>
-                    </div>
-                    <ul class="list-none px-8 space-y-1">
-                        {plan.benefits.map((benefit)=>
-                            <li><i class="ph ph-check"></i>{benefit}</li>
-                        )}
-                    </ul>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
 
-        <div class="bg-gray-200 rounded-xl p-8">
-            <p>
-                <i class="ph ph-cards"></i>
-                現在募集中のポジションは<a
-                    href="/recruitment"
-                    class="text-blue-500 underline hover:text-blue-700"
-                    >こちら</a
-                >。
-                ここにないスキルでもあなたを活かすポジションは無数にありますので、ぜひお気軽にコンタクトください。
-            </p>
-        </div>
+            <div class="bg-gray-50 rounded-lg p-8 mb-12">
+                <p class="text-gray-700">
+                    <i class="ph ph-cards mr-2"></i>
+                    現在募集中のポジションは<a
+                        href="/recruitment"
+                        class="text-orange hover:underline"
+                        >こちら</a
+                    >。
+                    ここにないスキルでもあなたを活かすポジションは無数にありますので、ぜひお気軽にコンタクトください。
+                </p>
+            </div>
 
-        <div class="container mx-auto p-6">
-            <div class="my-16">
-                <h2 class="text-2xl font-bold mb-2">入会の流れ</h2>
-                <ol class="list-decimal list-inside space-y-2">
-                    <li class="text-lg">
+            <section>
+                <h2 class="text-2xl font-semibold mb-6">入会の流れ</h2>
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="text-gray-700">
                         X, discord, facebookのいずれかで入会表明をポストしてください
                     </li>
-                    <li class="text-lg">
+                    <li class="text-gray-700">
                         協会メンバーからのご連絡差し上げます
                     </li>
-                    <li class="text-lg">
+                    <li class="text-gray-700">
                         ヒアリングをオンラインで行います
                     </li>
-                    <li class="text-lg">
+                    <li class="text-gray-700">
                         正式入会するかどうか決めてもらいます
                     </li>
                 </ol>
-            </div>
+            </section>
         </div>
-    </>
+    </main>
 </Layout>
