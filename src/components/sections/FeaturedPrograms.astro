@@ -7,9 +7,9 @@ import hunterStore from "@/assets/hunter-store.jpg";
 const featuredPrograms = [
   {
     id: 1,
-    name: "狩猟安全講習プログラム",
+    name: "狩猟初心者講習プログラム",
     duration: "3日間",
-    category: "安全教育",
+    category: "初心者教育",
     image: hunterKnowledge,
     features: ["オンライン事前学習", "実技研修", "認定証発行"],
     isNew: false,
@@ -17,7 +17,7 @@ const featuredPrograms = [
   },
   {
     id: 2,
-    name: "デジタル野生動物管理システム",
+    name: "狩猟犬GPSトラッキングシステム",
     duration: "継続利用",
     category: "ITソリューション",
     image: hunterHouse,
@@ -27,7 +27,7 @@ const featuredPrograms = [
   },
   {
     id: 3,
-    name: "森林管理会議",
+    name: "ハンター会議",
     duration: "年2回開催",
     category: "業界交流",
     image: hunterStore,
@@ -70,6 +70,8 @@ const featuredPrograms = [
                 alt={program.name}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
+              {/* 黒いオーバーレイ */}
+              <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-25 transition-opacity duration-500"></div>
             </div>
           </div>
           
