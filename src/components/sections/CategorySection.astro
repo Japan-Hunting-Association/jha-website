@@ -1,24 +1,28 @@
 ---
+import dugImage from "@/assets/dug.jpg";
+import bearImage from "@/assets/bear.jpg";
+import dearImage from "@/assets/dear.jpg";
+
 const categories = [
   {
     id: 1,
     title: "IT活用推進",
     description: "デジタル技術で業界を革新",
-    image: "/images/tech-innovation.jpg",
+    image: bearImage,
     items: ["データ管理システム", "狩猟記録アプリ", "個体数調査支援"]
   },
   {
     id: 2,
     title: "野生動物管理",
     description: "科学的根拠に基づく保護活動",
-    image: "/images/wildlife-management.jpg",
+    image: dugImage,
     items: ["個体数モニタリング", "生息地調査", "被害対策支援"]
   },
   {
     id: 3,
     title: "教育・研修",
     description: "次世代への技術継承",
-    image: "/images/education-training.jpg",
+    image: dearImage,
     items: ["オンライン講習", "安全研修", "技術講習会"]
   }
 ];
@@ -35,12 +39,24 @@ const categories = [
       {categories.map((category) => (
         <div class="group bg-white overflow-hidden hover:bg-gray-50 transition-colors duration-300">
           <div class="relative h-80 overflow-hidden bg-gray-200">
-            <div class="w-full h-full flex items-center justify-center text-gray-400">
-              {/* プレースホルダー画像 */}
-              <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
+            {typeof category.image === 'string' ? (
+              <div class="w-full h-full flex items-center justify-center text-gray-400">
+                {/* プレースホルダー画像 */}
+                <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+            ) : (
+              <>
+                <img 
+                  src={category.image.src} 
+                  alt={category.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* 黒いオーバーレイ */}
+                <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-25 transition-opacity duration-500"></div>
+              </>
+            )}
           </div>
           
           <div class="p-8">
