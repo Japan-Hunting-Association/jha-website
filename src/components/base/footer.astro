@@ -74,23 +74,27 @@ const translatePath = useTranslatedPath(lang);
         <h3 class="text-xs tracking-wider text-gray-500 mb-6">ACTIVITIES</h3>
         <ul class="space-y-4">
           <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/wildlife-management")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              野生動物管理
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/hunter-community")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              Hunter Community<br />
+              <span class="text-xs text-gray-500">コミュニティスペース運営</span>
             </a>
           </li>
           <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/data-analysis")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              データ分析
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/hunter-house")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              Hunter House<br />
+              <span class="text-xs text-gray-500">狩猟拠点の運営</span>
             </a>
           </li>
           <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/industry-research")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              業界調査
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/hunter-knowledge")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              Hunter Knowledge<br />
+              <span class="text-xs text-gray-500">ドキュメントスペース運営</span>
             </a>
           </li>
           <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/policy-proposals")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              政策提言
+            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/hunter-insurance")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
+              Hunter保険<br />
+              <span class="text-xs text-gray-500">狩猟者向け保険（準備中）</span>
             </a>
           </li>
         </ul>
