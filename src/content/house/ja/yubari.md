@@ -3,11 +3,16 @@ name: 'ハンターハウス新夕張'
 isPublic: true
 pubDate: 2024-09-16
 description: '新千歳空港から50分。北海道の真ん中に位置しており、いろいろなフィールドに遠征できます。猟車あります。'
-address: 〒068-0755 北海道新夕張紅葉山２４７−６２
+postalCode: '068-0755'
+prefecture: '北海道'
+city: '夕張市'
+addressDetail: '新夕張紅葉山２４７−６２'
+address: 〒068-0755 北海道新夕張紅葉山２４７−６２  # 後方互換性のため残す
 map_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d538.6244955196777!2d142.03461829901698!3d42.93895004084584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f74c1aad6971645%3A0x7aa5755014fabbdd!2z44OP44Oz44K_44O844OP44Km44K55aSV5by1!5e1!3m2!1sja!2sjp!4v1724611660591!5m2!1sja!2sjp"
 owner: 'yunoda'
 price: 準備中
 cover: '/ogp/yubari.jpg'
+heroImage: '@/content/house/img/yubari/yubari_town.jpg'
 coverWidth: 1000
 coverHeight: 400
 coverAlt: "hunter house in Yubari"
