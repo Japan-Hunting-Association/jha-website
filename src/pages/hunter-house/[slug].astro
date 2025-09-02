@@ -8,14 +8,11 @@ import defaultHeroImage from "@/assets/sample.jpg";
 import yubariTownImage from "@/content/house/img/yubari/yubari_town.jpg";
 
 export async function getStaticPaths() {
-    const pages = await getCollection("house", ({ id }) => {
-        return id.startsWith("ja/");
-    });
+    const pages = await getCollection("house");
 
     const paths = pages.map((page) => {
-        const [lang, ...slug] = page.slug.split("/");
         return {
-            params: { lang, slug: slug.join("/") || undefined },
+            params: { slug: page.slug },
             props: page,
         };
     });

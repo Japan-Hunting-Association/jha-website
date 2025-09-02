@@ -5,9 +5,7 @@ import { Image } from "astro:assets";
 import heroImage from "@/assets/sample.jpg";
 
 import { getCollection } from "astro:content";
-const houses = await getCollection("house", ({ id }) => {
-    return id.startsWith(Astro.currentLocale + "/");
-});
+const houses = await getCollection("house");
 ---
 
 <Layout title="ハンターハウス | 日本狩猟協会">

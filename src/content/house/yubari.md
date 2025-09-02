@@ -16,7 +16,6 @@ heroImage: '@/content/house/img/yubari/yubari_town.jpg'
 coverWidth: 1000
 coverHeight: 400
 coverAlt: "hunter house in Yubari"
-lang: ja
 tags: [北海道, 鹿撃ち, 狩猟車あり, 個室あり, 解体場所あり]
 equipments: [冷凍ストッカー, ガンロッカー2台, 装弾ロッカー2台, 真空パック機, 軽トラック, 解体道具, 浴室完備, 汲み取りトイレ, 渓流釣り装備, カセットガスコンロ, 洗濯機, 駐車場2台]
 forRent: '一部賃貸（間借り）および完全賃貸も可能です。ご相談ください。'
@@ -32,7 +31,7 @@ contact: https://x.com/yunoda_hunting
 - **個室あり。** プライベート空間もしっかり確保。
 
 
-![駅看板](@/content/house/img/yubari/yubari_town.jpg)(width: 600)
+![駅看板](@/content/house/img/yubari/yubari_town.jpg)
 
 # 夕張ってどんなとこ？
 夕張は北海道のほぼ中央に位置する炭鉱町です。人口は6000人ほどで、あの夕張メロンの産地です。
@@ -43,19 +42,19 @@ contact: https://x.com/yunoda_hunting
 ハンターハウス新夕張は短期滞在者向けにさまざまな設備をご用意しています。
 
 おやすみいただける居室はドミトリーに加え、プライベートを確保した1人部屋がございます。
-![ドミトリー](@/content/house/img/yubari/dormitory.jpg)(width: 600)
+![ドミトリー](@/content/house/img/yubari/dormitory.jpg)
 
 キッチンは広々としたシンクを準備しています。ジビエの解体にご活用ください。
-![キッチン](@/content/house/img/yubari/kitchen.jpg)(width: 300)
+![キッチン](@/content/house/img/yubari/kitchen.jpg)
 
 洗濯は温水をご利用いただけます。
-![ランドリー](@/content/house/img/yubari/laundry.jpg)(width: 300)
+![ランドリー](@/content/house/img/yubari/laundry.jpg)
 
 バスルームは独立型です。
-![浴室](@/content/house/img/yubari/bathroom.jpg)(width: 300)
+![浴室](@/content/house/img/yubari/bathroom.jpg)
 
 ガンロッカーを完備しています。滞在中は安心して銃を管理できます。
-![ガンロッカー](@/content/house/img/yubari/gunrocker.jpg)(width: 300)
+![ガンロッカー](@/content/house/img/yubari/gunrocker.jpg)
 
 このほかにも、
 - 狩猟車

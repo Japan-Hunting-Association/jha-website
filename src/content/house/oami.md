@@ -13,7 +13,6 @@ owner: 'tokisaba'
 price: ドミトリー3000円　個室5000円　※1日利用
 cover: '/ogp/yubari.jpg'
 coverAlt: "hunter house in Oami"
-lang: ja
 tags: [千葉, 鹿撃ち, 古民家, 個室あり, 解体場所あり, 駐車スペース4台程度]
 equipments: [冷凍ストッカー, 浴室完備, 簡易水栓トイレ, カセットガスコンロ, 洗濯乾燥機]
 forRent: '一部賃貸（間借り）および完全賃貸も可能です。ご相談ください。'
