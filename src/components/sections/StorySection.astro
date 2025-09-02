@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import storyImage from "@/assets/sample.jpg";
+---
+
+<section class="py-32 px-8 bg-gray-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-5">
+        <div class="text-xs tracking-wider text-gray-500 mb-6">OUR MISSION</div>
+        <h2 class="text-3xl font-light tracking-wide mb-8 leading-relaxed">
+          テクノロジーで創る、<br />
+          新しい狩猟の未来
+        </h2>
+        <div class="space-y-6 text-sm text-gray-600 leading-relaxed">
+          <p>
+            日本狩猟協会は、一般社団法人として狩猟業界の近代化と
+            IT活用を推進しています。データ駆動型の野生動物管理により、
+            持続可能な自然環境の保全を目指します。
+          </p>
+          <p>
+            伝統的な狩猟文化を尊重しながら、最新技術を活用した
+            効率的で透明性の高い業界システムを構築。
+            次世代の狩猟者育成にも力を注いでいます。
+          </p>
+        </div>
+        
+        <div class="mt-12">
+          <a 
+            href="/ja/association"
+            class="text-xs tracking-wider text-gray-800 hover:text-black cursor-pointer transition-colors duration-200"
+          >
+            協会について →
+          </a>
+        </div>
+      </div>
+      
+      <div class="lg:col-span-7">
+        <div class="relative">
+          <Image
+            src={storyImage}
+            alt="自然の中でのアウトドア体験"
+            class="w-full h-96 object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
