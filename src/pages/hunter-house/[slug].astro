@@ -1,6 +1,8 @@
 ---
 import Layout from "@/layouts/_layout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import heroImage from "@/assets/sample.jpg";
 
 export async function getStaticPaths() {
     const pages = await getCollection("house", ({ id }) => {
@@ -20,106 +22,82 @@ export async function getStaticPaths() {
 
 const post: any = Astro.props;
 const { Content } = await post.render();
+
+// Add URL variables
 const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://www.japan-hunting-association.or.jp';
 const coverURL = post.data.cover 
     ? new URL(post.data.cover, siteUrl).toString()
     : '/ogp/default.jpg';
 const pageURL = Astro.url;
+
+// Add basic variables with template literal
+const pageTitle = `${post.data.name} | ハンターハウス`;
+const description = post.data.description;
 ---
 
 <Layout 
-    title={post.data.name} 
-    imageUrl={coverURL} 
-    pageURL={pageURL} 
-    description={post.data.description}
+    title={pageTitle}
+    description={description}
+    imageUrl={coverURL}
+    pageURL={pageURL}
 >
-    <div class="flex flex-col gap-4 xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 mx-5">
-        <h1 class="text-center font-bold xl:text-5xl mt-20">{post.data.name}</h1>
-        <div class="flex justify-end xl:m-12">
-            <div>最終更新日</div>
-            <time datetime={post.data.pubDate?.toISOString()}>
-                {new Intl.DateTimeFormat("ja-JP").format(post.data.pubDate)}
-            </time>
+    <main class="pt-36">
+        <!-- Minimal test content -->
+        <div class="max-w-4xl mx-auto px-8">
+            <h1 class="text-3xl font-bold mb-4">{post.data.name}</h1>
+            <p class="text-gray-600 mb-8">{post.data.description}</p>
         </div>
 
-        <div class="base-info">
-            <h2 class="xl:text-2xl font-semibold mr-4">使用料</h2>
-            <div class="text-lg">{post.data.price}</div>
-        </div>
-
-        <div class="shadow-md rounded-lg p-6">
-            <h2 class="xl:text-2xl font-semibold mr-4">施設概要</h2>
-            <p class="text-lg m-4">
-                <Content />
-            </p>
-        </div>
-
-        <div class="base-info">
-            <h2 class="xl:text-2xl font-semibold mr-4">設備</h2>
-            <div class="grid xl:grid-cols-4 gap-2">
-                {
-                    post.data.equipments &&
-                        post.data.equipments.map((equipment: any) => (
-                            <div class="badge badge-outline">{equipment}</div>
-                        ))
-                }
+        <!-- Hero Section commented out for debugging -->
+        {/* 
+        <section class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden" style="margin-top: 80px;">
+            <div class="absolute inset-0">
+                <Image
+                    src={heroImage}
+                    alt={post.data.name}
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
             </div>
-        </div>
-
-        <div class="shadow-md rounded-lg p-6">
-            <div class="flex items-center">
-                <h2 class="xl:text-2xl font-semibold mr-4">アクセス</h2>
-                <p class="text-lg">{post.data.address}</p>
+            
+            <div class="relative z-10 text-center px-8 max-w-4xl mx-auto">
+                <nav class="text-sm text-white opacity-80 mb-6">
+                    <a href="/" class="hover:text-white transition-colors">ホーム</a>
+                    <a href="/hunter-house" class="hover:text-white transition-colors">ハンターハウス</a>
+                    <span class="text-white">{post.data.name}</span>
+                </nav>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-4 tracking-wide">{post.data.name}</h1>
+                <p class="text-lg text-white opacity-90">{post.data.description}</p>
             </div>
-            <iframe
-                src={post.data.map_embed}
-                class="flex-none xl:w-1/2 lg:w-2/3 w-full h-96 rounded-xl my-4"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        </section>
+        */}
 
-        <div class="base-info">
-            <h2 class="xl:text-2xl font-semibold mr-4">賃貸</h2>
-            <div class="flex">
-                {post.data.forRent}
+        <!-- Quick Info Bar commented out -->
+        {/*
+        <section class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-8 py-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+                    Info bar content...
+                </div>
             </div>
-        </div>
+        </section>
+        */}
 
-        <div class="base-info">
-            <h2 class="xl:text-2xl font-semibold mr-4">管理人</h2>
-            <p class="text-lg">{post.data.owner}</p>
-        </div>
-
-        <div class="base-info">
-            <h2 class="xl:text-2xl font-semibold mr-4">予約方法</h2>
-            <div class="flex">
-                {post.data.booking}
+        <!-- Main Content Simplified -->
+        <section class="py-12 px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl mb-4">施設概要</h2>
+                <div class="prose">
+                    <Content />
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="base-info">
-            <h2 class="xl:text-2xl font-semibold mr-4">連絡先</h2>
-            <div class="flex">
-                <a
-                    href={post.data.contact}
-                    class="text-blue-500 underline hover:text-blue-700"
-                    target="_blank">{post.data.contact}</a
-                >
-            </div>
+        <!-- Simple back link -->
+        <div class="text-center py-8">
+            <a href="/hunter-house" class="text-blue-600 hover:underline">
+                ハンターハウス一覧に戻る
+            </a>
         </div>
-
-        <div class="flex justify-center m-12">
-            <a href="/hunter-house" role="button" class="btn xl:w-1/4 sm:w-1/2"
-                >ハンターハウス一覧に戻る</a
-            >
-        </div>
-    </div>
+    </main>
 </Layout>
-
-<style>
-    .base-info {
-        @apply flex items-center shadow-md rounded-lg p-6;
-    }
-</style>
