@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    env:
+      PUBLIC_SITE_URL: https://www.japan-hunting-association.or.jp
 
     steps:
       - name: Checkout repository

@@ -20,8 +20,10 @@ export async function getStaticPaths() {
 
 const post: any = Astro.props;
 const { Content } = await post.render();
-const siteUrl = import.meta.env.PUBLIC_SITE_URL;
-const coverURL = new URL(post.data.cover, siteUrl).toString();
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://www.japan-hunting-association.or.jp';
+const coverURL = post.data.cover 
+    ? new URL(post.data.cover, siteUrl).toString()
+    : '/ogp/default.jpg';
 const pageURL = Astro.url;
 ---
 
