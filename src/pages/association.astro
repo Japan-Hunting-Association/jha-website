@@ -2,68 +2,85 @@
 import Layout from "@/layouts/_layout.astro";
 ---
 
-<Layout title="法人情報">
-    <div class="mx-40">
-        <div class="font-bold text-3xl text-center m-16">法人情報</div>
-        <div class="m-auto my-16">
-            <div class="flex">
-                <div class="w-1/4">法人名</div>
-                <div class="w-3/4">一般社団法人日本狩猟協会</div>
-            </div>
-            <div class="divider my-2"></div>
-            <div class="flex">
-                <div class="w-1/4">住所</div>
-                <div class="w-3/4">287-0225 千葉県成田市吉岡368-91</div>
-            </div>
-            <div class="divider my-2"></div>
-            <div class="flex">
-                <div class="w-1/4">代表理事</div>
-                <div class="w-3/4">
-                    <a
-                        href="https://x.com/yunoda_hunting"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-orange"
-                    >
-                        yunoda
-                    </a>
-                </div>
-            </div>
-            <div class="divider my-2"></div>
-            <div class="flex">
-                <div class="w-1/4">理事</div>
-                <div class="w-3/4">
-                    <a
-                        href="https://x.com/tokisaba"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-orange"
-                    >
-                        tokisaba
-                    </a>
-                    <br />
-                    <a
-                        href="https://x.com/bucca_boo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-orange"
-                    >
-                        tokutani
-                    </a>
-                </div>
-            </div>
-            <div class="divider my-2"></div>
-            <div class="flex">
-                <div class="w-1/4">創立日</div>
-                <div class="w-3/4">2024年10月2日</div>
-            </div>
-            <div class="divider my-2"></div>
-            <div class="flex">
-                <div class="w-1/4">電話番号</div>
-                <div class="w-3/4">
-                    非公開。ご入用の際はSNSアカウントよりお問い合わせください。
+<Layout title="法人情報 | 日本狩猟協会">
+    <main class="container mx-auto px-4 pt-36 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-8">法人情報</h1>
+            
+            <div class="prose prose-lg max-w-none">
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="font-semibold text-gray-700">法人名</div>
+                            <div class="md:col-span-3 text-gray-600">一般社団法人日本狩猟協会</div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="font-semibold text-gray-700">住所</div>
+                            <div class="md:col-span-3 text-gray-600">287-0225 千葉県成田市吉岡368-91</div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="font-semibold text-gray-700">代表理事</div>
+                            <div class="md:col-span-3">
+                                <a
+                                    href="https://x.com/yunoda_hunting"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-orange hover:underline"
+                                >
+                                    yunoda
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="font-semibold text-gray-700">理事</div>
+                            <div class="md:col-span-3">
+                                <a
+                                    href="https://x.com/tokisaba"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-orange hover:underline"
+                                >
+                                    tokisaba
+                                </a>
+                                <br />
+                                <a
+                                    href="https://x.com/bucca_boo"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-orange hover:underline"
+                                >
+                                    tokutani
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="font-semibold text-gray-700">創立日</div>
+                            <div class="md:col-span-3 text-gray-600">2024年10月2日</div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200 pb-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="font-semibold text-gray-700">電話番号</div>
+                            <div class="md:col-span-3 text-gray-600">
+                                非公開。ご入用の際はSNSアカウントよりお問い合わせください。
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </Layout>

@@ -18,7 +18,7 @@ const topicCollection = defineCollection({
 });
 
 const houseCollection = defineCollection({
-  schema: ({ image }) => z.object({
+  schema: () => z.object({
     name: z.string().optional(),
     isPublic: z.boolean().optional(),
     tags: z.array(z.string()).optional(),

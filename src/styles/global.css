@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prose styles for markdown content */
+.prose img {
+  @apply rounded-lg shadow-md my-6 mx-auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.prose h1 {
+  @apply text-2xl font-light tracking-wide mb-4 mt-8;
+}
+
+.prose h2 {
+  @apply text-xl font-light tracking-wide mb-3 mt-6;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 space-y-2;
+}
+
+.prose li {
+  @apply text-gray-600;
+}

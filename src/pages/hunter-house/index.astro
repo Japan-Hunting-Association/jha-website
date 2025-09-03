@@ -1,45 +1,96 @@
 ---
 import Layout from "@/layouts/_layout.astro";
 import HouseCard from "@/components/house/house-card.astro";
+import { Image } from "astro:assets";
+import heroImage from "@/assets/sample.jpg";
 
 import { getCollection } from "astro:content";
-const houses = await getCollection("house", ({ id }) => {
-    return id.startsWith(Astro.currentLocale + "/");
-});
+const houses = await getCollection("house");
 ---
 
-<Layout title="ハンターハウスとは">
-    <div class="flex flex-col gap-8 xl:mx-40 lg:mx-20 md:mx-10 mx-5 mb-20">
-        <div class="mt-8">
-            <h2 class="text-3xl text-center font-bold">ハンターハウスとは</h2>
-            <div class="my-4">
-                ハンターハウスは狩猟遠征の短期宿泊やお試し狩猟移住にご利用いただけるハンター向けシェアハウスです。一部物件は当協会会員以外の方でもご利用いただけます。<br>
-                物件によっては入居も可能です。これから猟を始める方や銃が置ける物件をお探しの方は、ぜひご相談ください。
+<Layout title="ハンターハウス | 日本狩猟協会">
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden" style="margin-top: 80px;">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <Image
+                    src={heroImage}
+                    alt="ハンターハウス"
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black/40"></div>
             </div>
-        </div>
-        <div>
-            <h2 class="xl:text-3xl text-center font-bold my-4">提供中のハンターハウス</h2>
-            <div class="grid xl:grid-cols-3 gap-4">
-                {houses.map((house) => house.data.isPublic ? <HouseCard house_data={house} /> : <></>)}
+            
+            <!-- Hero Content -->
+            <div class="relative z-10 text-center px-8 max-w-4xl mx-auto">
+                <div class="text-xs tracking-wider text-white/80 mb-4">HUNTER HOUSE</div>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-wide">ハンターハウス</h1>
+                <p class="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
+                    狩猟遠征の短期宿泊やお試し狩猟移住にご利用いただけるハンター向けシェアハウス。<br>
+                    これから猟を始める方や銃が置ける物件をお探しの方をサポートします。
+                </p>
             </div>
-        </div>
-        <div class="divider"></div>
-        <div>
-            <h2 class="text-3xl text-center font-bold my-4">物件募集中</h2>
-            <div class="my-2">
-                日本狩猟協会では、ハンターハウスの活動に協力してくれる方を募集しております。
+        </section>
+        <!-- Properties Section -->
+        <section class="py-24 px-8 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="text-xs tracking-wider text-gray-500 mb-4">AVAILABLE PROPERTIES</div>
+                    <h2 class="text-3xl font-light tracking-wide">提供中のハンターハウス</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    {houses.map((house) => house.data.isPublic ? <HouseCard house_data={house} /> : null)}
+                </div>
+                
+                {houses.filter(h => h.data.isPublic).length === 0 && (
+                    <div class="text-center py-16 text-gray-500">
+                        現在、利用可能な物件はありません。
+                    </div>
+                )}
             </div>
-            <ul class="list-disc list-inside space-y-1">
-                <li>実家が空き家で持て余してる</li>
-                <li>使ってない別荘がある</li>
-                <li>民泊をやっているが、猟師にも利用してもらいたい</li>
-            </ul>
-            <div class="my-2">
-                掲載を希望される方は、<a
-                    href="/hunter-house/accepting"
-                    class="text-blue-500 hover:text-blue-700">こちら</a
-                >より詳細をご確認ください。
+        </section>
+        <!-- CTA Section -->
+        <section class="py-24 px-8 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="border border-gray-200 rounded-lg p-12 text-center">
+                    <div class="text-xs tracking-wider text-gray-500 mb-4">JOIN US</div>
+                    <h2 class="text-3xl font-light tracking-wide mb-8">物件募集中</h2>
+                    
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        日本狩猟協会では、ハンターハウスの活動に協力してくれる方を募集しております。
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-left max-w-2xl mx-auto">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 mt-0.5 text-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            <span class="text-sm text-gray-600">実家が空き家で持て余してる</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 mt-0.5 text-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            <span class="text-sm text-gray-600">使ってない別荘がある</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 mt-0.5 text-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span class="text-sm text-gray-600">民泊を猟師にも利用してもらいたい</span>
+                        </div>
+                    </div>
+                    
+                    <a
+                        href="/hunter-house/accepting"
+                        class="inline-block bg-orange text-white px-8 py-3 text-sm tracking-wider hover:bg-orange/90 transition-colors duration-200"
+                    >
+                        詳細を確認する
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </Layout>
