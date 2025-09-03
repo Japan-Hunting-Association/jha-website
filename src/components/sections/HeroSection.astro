@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "@/assets/sample.jpg";
+---
+
+<section class="relative w-full" style="height: 70vh; margin-top: 80px;">
+  <!-- 背景画像 -->
+  <div class="absolute inset-0">
+    <Image
+      src={heroImage}
+      alt="森林と野生動物の保護"
+      class="w-full h-full object-cover"
+    />
+    <!-- 軽いオーバーレイ -->
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+
+  <!-- コンテンツ -->
+  <div class="relative z-10 h-full flex items-end">
+    <div class="w-full px-8 pb-16">
+      <div class="max-w-2xl">
+        <div class="text-white">
+          <div class="text-xs tracking-wider mb-4 opacity-80">
+            JAPAN HUNTING ASSOCIATION
+          </div>
+          <h1 class="text-4xl md:text-5xl mb-6 font-light tracking-wide">
+            狩猟業界の革新
+          </h1>
+          <p class="text-lg mb-8 opacity-90 leading-relaxed font-light max-w-xl">
+            ITテクノロジーで日本の狩猟業界をアップデート。<br />
+            持続可能な野生動物管理を目指して。
+          </p>
+          <a
+            href="/about-us"
+            class="inline-block border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wider"
+          >
+            詳細を見る
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

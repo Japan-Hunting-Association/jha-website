@@ -1,4 +1,4 @@
-name: Check Astro Build
+name: Check Astro Build and Test
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - '**'  # 任意のブランチ
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     
     env:
@@ -23,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Run tests
+        run: npm test
 
       - name: Check Astro build
         run: npm run build  # package.json の build スクリプトが astro build を呼び出している必要があります

@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/_layout.astro";
 import { Image } from "astro:assets";
-import logo from "@/assets/logo.svg";
+// import logo from "@/assets/logo.svg";
 import image_problem_1 from "@/assets/problem1.jpg";
 import image_problem_2 from "@/assets/problem2.jpg";
 import image_problem_3 from "@/assets/problem3.jpg";
@@ -10,106 +10,222 @@ import image_hunter_house from "@/assets/hunter-house.jpg";
 import image_hunter_tech from "@/assets/hunter-tech.jpg";
 import image_hunter_knowledge from "@/assets/hunter-knowledge.jpg";
 import image_hunter_store from "@/assets/hunter-store.jpg";
-import SectionCard from "@/components/about-us/section-card.astro";
+// import heroImage from "@/assets/sample.jpg";
+
+const problems = [
+  {
+    title: "高齢化による人材不足",
+    description: "狩猟人口の高齢化に伴う地方ハンターの激減",
+    image: image_problem_1,
+    icon: "👴"
+  },
+  {
+    title: "旧態依然な体制",
+    description: "旧態依然なハンターとお役所の有害鳥獣事業",
+    image: image_problem_2,
+    icon: "🏛️"
+  },
+  {
+    title: "IT化の遅れ",
+    description: "IT化の遅れによる狩猟技術のシェアリング不足",
+    image: image_problem_3,
+    icon: "💻"
+  }
+];
+
+const services = [
+  {
+    title: "Hunter Community",
+    description: "ハンター同士が情報交換したり交流できるコミュニティスペース",
+    image: image_hunter_community
+  },
+  {
+    title: "Hunter House",
+    description: "ハンターが利用できる短期滞在・賃貸物件の紹介サービス",
+    image: image_hunter_house
+  },
+  {
+    title: "Hunter Tech",
+    description: "IoTやマイコンを駆使した狩猟技術のテック化プロジェクト",
+    image: image_hunter_tech
+  },
+  {
+    title: "Hunter Knowledge",
+    description: "狩猟技術の保存とシェアを目指すドキュメントスペース",
+    image: image_hunter_knowledge
+  },
+  {
+    title: "Hunter Store",
+    description: "ジビエ素材の利活用を促進するためのマーケットサービス",
+    image: image_hunter_store
+  }
+];
 ---
 
-<Layout title="日本狩猟協会について">
-    <sction>
-        <div
-            class="flex justify-center items-center align-middle text-center font-bold text-6xl h-screen"
-        >
-            Update Hunting!
-        </div>
-        <div class="flex justify-center items-center h-screen">
-            <Image src={logo} alt="" class="w-64 h-64" />
-        </div>
-    </sction>
-    <sction>
-        <div class="message">
-            日本狩猟協会は、日本の狩猟環境をアップデートするために有志で結成された狩猟団体です。
-        </div>
-        <div class="message">
-            われわれは、日本の狩猟環境が停滞していくことを最も危惧しています。
-        </div>
-        <div class="message">たとえば、</div>
-        <div class="message flex gap-8">
-            <Image
-                src={image_problem_1}
-                alt=""
-                class="w-64 h-64 rounded-2xl"
-            />
-            <div>狩猟人口の高齢化に伴う地方ハンターの激減</div>
-        </div>
-        <div class="message flex gap-8">
-            <Image
-                src={image_problem_2}
-                alt=""
-                class="w-64 h-64 rounded-2xl"
-            />
-            <div>旧態依然なハンターとお役所の有害鳥獣事業</div>
-        </div>
-        <div class="message flex gap-8">
-            <Image
-                src={image_problem_3}
-                alt=""
-                class="w-64 h-64 rounded-2xl"
-            />
-            <div>IT化の遅れによる狩猟技術のシェアリング不足</div>
-        </div>
-        <div class="message">
-            これらの問題は、テクノロジーの導入や官民一体となった行政システムのチューニングによって解決できると信じています。
-        </div>
-        <div class="message">
-            しかし、これらは待っているだけではなにも変わりません。
-        </div>
-        <div class="message">
-            だれかが「アップデート」する必要があるのです。
-        </div>
-        <div class="message">
-            それが日本狩猟協会の存在意義であり、ミッションです。
-        </div>
-    </sction>
-    <sction>
-        <div class="message">
-            日本狩猟協会は以下の五事業を提供し、日本の狩猟環境のアップデートに挑戦します。
-        </div>
-        <div class="grid grid-cols-3 gap-12 mx-40">
-            <SectionCard class="col-span-1" title="Hunter Community" image={ image_hunter_community } description="ハンター同士が情報交換したり交流できるコミュニティスペースです。"/>
-            <SectionCard class="col-span-1" title="Hunter House" image={ image_hunter_house } description="ハンターが利用できる短期滞在・賃貸物件の紹介サービスです。"/>
-            <SectionCard class="col-span-1" title="Hunter Tech" image={ image_hunter_tech } description="IoTやマイコンを駆使した狩猟技術のテック化プロジェクトです。"/>
-            <div class="col-span-3 flex justify-center gap-12 mx-40">
-                <SectionCard class="col-span-1" title="Hunter Knowledge" image={ image_hunter_knowledge } description="狩猟技術の保存とシェアを目指すドキュメントスペースです。"/>
-                <SectionCard class="col-span-1" title="Hunter Store" image={ image_hunter_store } description="ジビエ素材の利活用を促進するためのマーケットサービスです。"/>
-            </div>
-        </div>
-    </sction>
-    <sction>
-        <div class="message">
-            これらの五事業は、わたしたちが狩猟界隈に不足していると感じるものといっても過言ではありません。
-        </div>
-        <div class="message">
-            <ul>
-                <li>拠点がない</li>
-                <li>仲間がいない</li>
-                <li>市場がない</li>
-                <li>情報がない</li>
-                <li>効率的でない</li>                
-            </ul>
-        </div>
-        <div class="message">
-            われわれの活動を通じて、すこしでも日本の狩猟環境が前進することがあれば幸いです。
-        </div>
-    </sction>
-    <sction>
-        <div class="message">
-            <p>また同時に、日本狩猟協会は同じ価値観をともに活動してくれる仲間（会員）を募集しています。
-            詳しくは<a href="/join" class="text-blue-500 underline hover:text-blue-700 inline">こちら</a>から。</p>
-        </div>
-    </sction>
-</Layout>
+<Layout title="日本狩猟協会について | 日本狩猟協会">
+  <!-- ミッションセクション -->
+  <section class="pt-36 pb-24 px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="text-xs tracking-wider text-gray-500 mb-4">OUR MISSION</div>
+        <h2 class="text-3xl font-light tracking-wide mb-8">私たちの使命</h2>
+      </div>
+      
+      <div class="space-y-8 text-center">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          日本狩猟協会は、日本の狩猟環境をアップデートするために有志で結成された狩猟団体です。
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          テクノロジーの導入や官民一体となった行政システムのチューニングによって、<br />
+          停滞している狩猟環境に革新をもたらします。
+        </p>
+        <p class="text-xl font-medium text-gray-800">
+          それが日本狩猟協会の存在意義であり、ミッションです。
+        </p>
+      </div>
+    </div>
+  </section>
 
-<style scoped>
-    .message {
-        @apply flex justify-center items-center font-bold text-4xl h-screen m-40;
-    }
-</style>
+  <!-- 課題セクション -->
+  <section class="py-24 px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="text-xs tracking-wider text-gray-500 mb-4">CHALLENGES</div>
+        <h2 class="text-3xl font-light tracking-wide mb-8">解決すべき課題</h2>
+        <p class="text-gray-600 mb-8">日本の狩猟環境が直面している3つの大きな課題</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-100">
+        {problems.map((problem) => (
+          <div class="group bg-white overflow-hidden hover:bg-gray-50 transition-colors duration-300">
+            <div class="relative h-48 overflow-hidden">
+              <Image
+                src={problem.image}
+                alt={problem.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="p-8">
+              <h3 class="text-xl font-light mb-3">{problem.title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                {problem.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <p class="text-lg text-gray-700">
+          これらの問題は、待っているだけでは何も変わりません。<br />
+          <strong>だれかが「アップデート」する必要があるのです。</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5つの事業セクション -->
+  <section class="py-24 px-8 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="text-xs tracking-wider text-gray-500 mb-4">OUR SERVICES</div>
+        <h2 class="text-3xl font-light tracking-wide mb-8">5つの事業展開</h2>
+        <p class="text-gray-600">日本狩猟協会は以下の五事業を提供し、日本の狩猟環境のアップデートに挑戦します</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-100">
+        {services.slice(0, 3).map((service) => (
+          <div class="group bg-white overflow-hidden hover:bg-gray-50 transition-colors duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <Image
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            
+            <div class="p-8">
+              <h3 class="text-xl font-light mb-3">{service.title}</h3>
+              <p class="text-sm text-gray-600">
+                {service.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-100 mt-px">
+        {services.slice(3).map((service) => (
+          <div class="group bg-white overflow-hidden hover:bg-gray-50 transition-colors duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <Image
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            
+            <div class="p-8">
+              <h3 class="text-xl font-light mb-3">{service.title}</h3>
+              <p class="text-sm text-gray-600">
+                {service.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 私たちが解決すること -->
+  <section class="py-24 px-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="text-xs tracking-wider text-gray-500 mb-4">WHAT WE SOLVE</div>
+      <h2 class="text-3xl font-light tracking-wide mb-8">私たちが解決すること</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div class="text-center">
+          <div class="text-3xl mb-2">🏠</div>
+          <p class="text-sm text-gray-600">拠点がない</p>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl mb-2">👥</div>
+          <p class="text-sm text-gray-600">仲間がいない</p>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl mb-2">📊</div>
+          <p class="text-sm text-gray-600">市場がない</p>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl mb-2">📚</div>
+          <p class="text-sm text-gray-600">情報がない</p>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="text-sm text-gray-600">効率的でない</p>
+        </div>
+      </div>
+      
+      <p class="text-lg text-gray-700 leading-relaxed">
+        われわれの活動を通じて、<br />
+        すこしでも日本の狩猟環境が前進することがあれば幸いです。
+      </p>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="py-16 px-8 bg-orange text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-light mb-6">一緒に狩猟業界をアップデートしませんか？</h2>
+      <p class="text-lg mb-8 opacity-90">
+        日本狩猟協会は同じ価値観を共に活動してくれる仲間（会員）を募集しています。
+      </p>
+      <a
+        href="/join"
+        class="inline-block bg-white text-orange px-8 py-3 hover:bg-gray-100 transition-colors duration-300 font-medium"
+      >
+        会員募集について詳しく見る
+      </a>
+    </div>
+  </section>
+</Layout>

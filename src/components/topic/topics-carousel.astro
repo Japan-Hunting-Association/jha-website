@@ -15,12 +15,12 @@ const sortedPosts = posts.sort((a, b) => {
 })
 ---
 <div class="flex flex-col gap-2">
-{posts.map((post) => (post.data.isPublic ?
-  <div class="flex gap-4">
-    <time datetime={post.data.pubDate?.toISOString()} class="fit-content px-2 bg-orange text-white my-auto">
+{sortedPosts.map((post) => (post.data.isPublic ?
+  <div class="flex gap-4 items-center">
+    <time datetime={post.data.pubDate?.toISOString()} class="text-xs px-3 py-1 bg-gray-100 text-gray-600 rounded font-medium inline-block min-w-[100px] text-center">
       { new Intl.DateTimeFormat('ja-JP').format(post.data.pubDate) }
     </time>
-    <a href={ `topic/${getBaseURL(post.slug)}` }>
+    <a href={ `topic/${getBaseURL(post.slug)}` } class="text-gray-700 hover:text-black transition-colors duration-200">
       { post.data.title }
     </a>
   </div>
