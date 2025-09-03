@@ -5,6 +5,7 @@ import {
   useTranslatedPath,
 } from "@/i18n/utils";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import logo from "@/assets/logo.svg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -16,7 +17,10 @@ const translatePath = useTranslatedPath(lang);
     <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
       <!-- 協会情報 -->
       <div class="md:col-span-1">
-        <div class="text-lg tracking-wider font-normal mb-6">日本狩猟協会</div>
+        <div class="flex items-center gap-3 mb-6">
+          <img src={logo.src} alt="日本狩猟協会ロゴ" class="w-8 h-8" />
+          <div class="text-lg tracking-wider font-normal">日本狩猟協会</div>
+        </div>
         <p class="text-gray-600 text-sm leading-relaxed mb-8">
           一般社団法人<br />
           狩猟業界のIT化推進団体
