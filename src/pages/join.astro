@@ -1,0 +1,101 @@
+---
+import Layout from "@/layouts/_layout.astro";
+const plans = [
+    {
+        title: '賛助会員',
+        price: '会費1,000円/年',
+        summary: `
+        日本狩猟協会が提供するサービスをご利用になりたい方に最適です。
+        `,
+        benefits: [
+            'ハンターハウスをご利用いただけます',
+            '狩猟ツアー・レッスンへの参加が可能です',
+            'ハンター保険に加入できます（準備中）',
+        ]
+    },
+    {
+        title: '正会員',
+        price: '会費1,000円/年',
+        summary: `
+        共に狩猟業界の革新に取り組みたい方向けのプランです。
+        活動は無報酬となります。
+        `,
+        benefits: [
+            '社員総会での議決権を行使できます',
+            'ハンターハウスをご利用いただけます',
+            'ハンター保険に加入できます（準備中）',
+            '週1回の定例会議にご参加いただきます',
+            '退会は自由ですが、規約違反の場合は除名処分もあります'
+        ]
+    }
+]
+---
+
+<Layout title="会員になるには | 日本狩猟協会">
+    <main class="container mx-auto px-4 pt-36 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-8">会員になるには</h1>
+            
+            <div class="prose prose-lg max-w-none mb-12">
+                <p class="text-gray-600">
+                    日本狩猟協会では、随時賛助会員と正会員を募集しています。<br />
+                    当協会は非営利型一般社団法人であるため、<strong>協会の活動は全てボランティアベース</strong>となります。<br />
+                    正会員になられましても、活動にかかる経費は寄付や会費に頼るため、活動費を十分にお支払いできないことをご了承ください。<br/>
+                    それでも日本の狩猟業界を良くしたいという志のある方は、われわれも最大限バックアップいたしますので、ぜひお気軽にご連絡いただければと思います。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                { plans.map((plan) => (
+                    <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-orange transition-colors">
+                        <div class="text-center mb-6">
+                            <h2 class="text-2xl font-bold mb-2">{plan.title}</h2>
+                            <p class="text-lg text-gray-600">{plan.price}</p>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-gray-600">{plan.summary}</p>
+                        </div>
+                        <ul class="space-y-2">
+                            {plan.benefits.map((benefit)=>
+                                <li class="flex items-start">
+                                    <i class="ph ph-check text-green-500 mr-2 mt-1"></i>
+                                    <span class="text-gray-700">{benefit}</span>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-8 mb-12">
+                <p class="text-gray-700">
+                    <i class="ph ph-cards mr-2"></i>
+                    現在募集中のポジションは<a
+                        href="/recruitment"
+                        class="text-orange hover:underline"
+                        >こちら</a
+                    >。
+                    記載のないスキルでも、あなたの能力を活かせるポジションは多数ございます。ぜひお気軽にご相談ください。
+                </p>
+            </div>
+
+            <section>
+                <h2 class="text-2xl font-semibold mb-6">入会の流れ</h2>
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="text-gray-700">
+                        X、Discord、Facebookのいずれかで入会希望の旨をご投稿ください
+                    </li>
+                    <li class="text-gray-700">
+                        協会メンバーよりご連絡を差し上げます
+                    </li>
+                    <li class="text-gray-700">
+                        オンラインにて面談を実施いたします
+                    </li>
+                    <li class="text-gray-700">
+                        正式入会についてご判断いただきます
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </main>
+</Layout>
