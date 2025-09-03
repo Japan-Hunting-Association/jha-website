@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X, Users, UserCircle } from 'lucide-react'
+import { Menu, X, UserCircle } from 'lucide-react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
