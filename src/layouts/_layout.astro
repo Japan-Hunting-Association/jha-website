@@ -48,8 +48,8 @@ const pageURL = Astro.props.pageURL ?? 'https://www.japan-hunting-association.or
 		<meta name="twitter:image" content={ imageUrl }>
 
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-KH7D2W84VV"></script>
-		<script>
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KH7D2W84VV"></script>
+		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
