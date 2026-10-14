@@ -14,7 +14,7 @@ import logo from "@/assets/logo.svg";
 
 <footer class="bg-white border-t border-gray-100">
   <div class="max-w-7xl mx-auto px-8 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
       <!-- 協会情報 -->
       <div class="md:col-span-1">
         <div class="flex items-center gap-3 mb-6">
@@ -43,33 +43,6 @@ import logo from "@/assets/logo.svg";
             </svg>
           </a>
         </div>
-      </div>
-
-      <!-- PROGRAMS -->
-      <div>
-        <h3 class="text-xs tracking-wider text-gray-500 mb-6">PROGRAMS</h3>
-        <ul class="space-y-4">
-          <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/safety-education")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              安全教育
-            </a>
-          </li>
-          <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/it-training")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              IT研修
-            </a>
-          </li>
-          <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/technical-training")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              技術講習
-            </a>
-          </li>
-          <li>
-            <a href={getRelativeLocaleUrl(Astro.currentLocale as string, "/certification")} class="text-gray-700 text-sm hover:text-black transition-colors duration-200">
-              認定制度
-            </a>
-          </li>
-        </ul>
       </div>
 
       <!-- ACTIVITIES -->
