@@ -14,7 +14,6 @@ src/components/
 ├── house/          # ハンターハウス関連
 ├── service/        # サービス関連
 ├── about-us/       # 協会について関連
-├── recruit/        # 採用関連
 └── director/       # 理事・役員関連
 ```
 
