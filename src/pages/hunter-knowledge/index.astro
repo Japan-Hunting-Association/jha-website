@@ -1,0 +1,122 @@
+---
+import Layout from "@/layouts/_layout.astro";
+import { Image } from "astro:assets";
+import img_magazine_vol1 from "@/assets/hunter-magazine/vol1.jpg";
+import img_magazine_vol2 from "@/assets/hunter-magazine/vol2.jpg";
+
+const techbookfestUrl = 'https://techbookfest.org/organization/1yEngz16X1T0YBenQfsCEu';
+
+const issues = [
+    {
+        volume: 'vol.2',
+        published: '2026.04',
+        catchphrase: 'いま、狩猟があつい。',
+        cover: img_magazine_vol2,
+        url: 'https://techbookfest.org/product/2kXXz0ts0DsrF2m5m0EAUX',
+        articles: [
+            { title: '【実録】現場の捕獲者がAIを「敏腕編集者」として活用するワークフロー', author: '沖 浩志' },
+            { title: 'DIYでつくるマイ・ガンラック', author: 'Mitsukuni Sato a.k.a `key`' },
+            { title: '狩猟を知らないエンジニアが、罠猟の最適化を考えてみた話', author: '海老根正伸' },
+            { title: 'ヌタ場はAIで見つかるのか', author: 'nizuka' }
+        ],
+        otherArticles: 4
+    },
+    {
+        volume: 'vol.1',
+        published: '2025.11',
+        catchphrase: 'なぜ、いま狩猟なのか',
+        cover: img_magazine_vol1,
+        url: 'https://techbookfest.org/product/69CatsxCRZewysdbiP27dG',
+        articles: [
+            { title: '箱罠によるヒグマの捕獲', author: '徳谷康憲' },
+            { title: '狩猟犬トラッカーを作ってみた', author: 'ギーつくの森本' },
+            { title: '猟犬を引き取ったので調べたり聞いたりした記録', author: 'tokisaba' },
+            { title: '出猟報告の記入をデジタル化することに意味はあるか？', author: 'yunoda' }
+        ],
+        otherArticles: 0
+    }
+];
+---
+
+<Layout title="Hunter Knowledge | 日本狩猟協会" description="狩猟技術の保存とシェアを目指す日本狩猟協会のドキュメントスペース。狩猟技術研究誌「Hunter Magazine」を紹介します。">
+    <!-- イントロ -->
+    <section class="pt-36 pb-20 px-8 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="text-xs tracking-wider text-gray-500 mb-4">HUNTER KNOWLEDGE</div>
+            <h1 class="text-3xl font-light tracking-wide mb-8">狩猟技術の保存とシェア</h1>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                狩猟の技術や知見は、個人の経験の中にとどまり、記録として残りにくいのが現状です。<br class="hidden md:inline" />
+                Hunter Knowledgeでは、ハンターが培ってきた知識を文書として残し、共有していくことを目指しています。
+            </p>
+        </div>
+    </section>
+
+    <!-- Hunter Magazine -->
+    <section class="py-24 px-8 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="text-xs tracking-wider text-gray-500 mb-4">PUBLICATION</div>
+                <h2 class="text-3xl font-light tracking-wide mb-6">Hunter Magazine</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Hunter Magazineは、狩猟を取り扱う技術研究誌です。<br class="hidden md:inline" />
+                    日本狩猟協会の有志が執筆・制作し、技術書典で頒布しています。
+                </p>
+            </div>
+
+            <div class="space-y-px bg-gray-100">
+                {issues.map((issue) => (
+                    <article class="bg-white p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                        <a href={issue.url} target="_blank" rel="noopener noreferrer" class="block group">
+                            <Image
+                                src={issue.cover}
+                                alt={`Hunter Magazine ${issue.volume} 表紙`}
+                                class="w-full max-w-xs mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+                            />
+                        </a>
+
+                        <div class="md:col-span-2 flex flex-col">
+                            <div class="text-xs tracking-wider text-gray-500 mb-2">{issue.published}</div>
+                            <h3 class="text-2xl font-light mb-2">Hunter Magazine {issue.volume}</h3>
+                            <p class="text-lg text-orange mb-8">{issue.catchphrase}</p>
+
+                            <div class="text-xs tracking-wider text-gray-500 mb-4">主な掲載記事</div>
+                            <ul class="space-y-4 mb-8">
+                                {issue.articles.map((article) => (
+                                    <li class="border-l-2 border-orange pl-4">
+                                        <div class="text-gray-800">{article.title}</div>
+                                        <div class="text-sm text-gray-500">{article.author}</div>
+                                    </li>
+                                ))}
+                            </ul>
+                            {issue.otherArticles > 0 && (
+                                <p class="text-sm text-gray-500 -mt-4 mb-8">ほか{issue.otherArticles}記事を収録</p>
+                            )}
+
+                            <div class="mt-auto">
+                                <a
+                                    href={issue.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-block border border-gray-800 text-gray-800 px-8 py-3 hover:bg-gray-800 hover:text-white transition-all duration-300 text-sm tracking-wider"
+                                >
+                                    技術書典で見る
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+
+            <div class="mt-16 text-center">
+                <a
+                    href={techbookfestUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm tracking-wider text-gray-700 hover:text-black underline underline-offset-4 transition-colors duration-200"
+                >
+                    技術書典の日本狩猟協会サークルページを見る
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>
