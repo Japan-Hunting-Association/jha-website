@@ -9,7 +9,7 @@ coverAlt: "Japan Hunting Association activity reports announcement"
 lang: ja
 ---
 
-このたび、一般社団法人日本狩猟協会の2024年度の各種報告書を公開いたしましたのでお知らせいたします。
+このたび、日本狩猟協会の2024年度の各種報告書を公開いたしましたのでお知らせいたします。
 
 ## 公開した報告書
 
@@ -37,5 +37,5 @@ lang: ja
 <br>
 
 <div style="text-align: right;">
-一般社団法人日本狩猟協会　代表理事　yunoda
+日本狩猟協会　代表　yunoda
 </div>

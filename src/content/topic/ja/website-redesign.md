@@ -2,14 +2,14 @@
 title: 'ホームページデザインを全面刷新しました'
 isPublic: true
 pubDate: 2025-09-03
-description: '一般社団法人日本狩猟協会のホームページデザインを全面的にリニューアルしました。'
+description: '日本狩猟協会のホームページデザインを全面的にリニューアルしました。'
 author: 'yunoda'
 cover: "src/assets/online-hunters-union.png" 
 coverAlt: "Japan Hunting Association website redesign announcement"
 lang: ja
 ---
 
-この度、一般社団法人日本狩猟協会のホームページデザインを全面的に刷新いたしましたことをお知らせいたします。
+この度、日本狩猟協会のホームページデザインを全面的に刷新いたしましたことをお知らせいたします。
 
 ## 主な改善点
 
@@ -40,12 +40,12 @@ lang: ja
 
 新しくなったホームページを通じて、より多くの方々に狩猟の魅力と協会の活動をお伝えできることを願っております。
 
-引き続き、一般社団法人日本狩猟協会をよろしくお願い申し上げます。
+引き続き、日本狩猟協会をよろしくお願い申し上げます。
 
 <br>
 <br>
 <br>
 
 <div style="text-align: right;">
-一般社団法人日本狩猟協会　代表理事　yunoda
+日本狩猟協会　代表　yunoda
 </div>

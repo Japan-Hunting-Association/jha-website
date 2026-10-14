@@ -2,14 +2,14 @@
 title: '法人登記完了のご報告'
 isPublic: true
 pubDate: 2024-10-02
-description: '一般社団法人日本狩猟協会の法人登記が完了しました。'
+description: '日本狩猟協会の法人登記が完了しました。'
 author: 'yunoda'
 cover: "src/assets/online-hunters-union.png" 
 coverAlt: "The company registration of Japan Hunting Associaiton has been completed."
 lang: ja
 ---
 
-このたび、一般社団法人日本狩猟協会は2024年10月2日付で法人登記されましたことをご報告いたします。
+このたび、日本狩猟協会は2024年10月2日付で法人登記されましたことをご報告いたします。
 
 当団体は、細りゆく狩猟業界を危惧し、なんとかその流れを止めるべく有志で結成された狩猟団体です。
 
@@ -22,5 +22,5 @@ lang: ja
 <br>
 
 <div style="text-align: right;">
-一般社団法人日本狩猟協会　代表理事　yunoda
+日本狩猟協会　代表　yunoda
 </div>

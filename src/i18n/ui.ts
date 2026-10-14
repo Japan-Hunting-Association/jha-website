@@ -19,8 +19,8 @@ export const languages = {
     },
     ja: {
       'footer.about-us': '日本狩猟協会について',
-      'footer.director': '構成理事',
-      'footer.association': '法人情報',
+      'footer.director': '運営メンバー',
+      'footer.association': '団体情報',
       'footer.join': '会員になるには',
       'footer.recruit': '募集人材',
       'footer.privacy': 'プライバシーポリシー',
