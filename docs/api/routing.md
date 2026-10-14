@@ -34,9 +34,7 @@ src/pages/
 | `about-us.astro` | `/about-us` | 協会について |
 | `association.astro` | `/association` | 協会情報 |
 | `contact.astro` | `/contact` | お問い合わせ |
-| `join.astro` | `/join` | 入会案内 |
 | `privacy.astro` | `/privacy` | プライバシーポリシー |
-| `recruitment.astro` | `/recruitment` | 採用情報 |
 | `404.astro` | `/404` | 404エラーページ |
 
 ### セクション別ルート

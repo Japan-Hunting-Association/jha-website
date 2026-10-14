@@ -17,7 +17,7 @@ describe('Header', () => {
   it('should render all menu items', () => {
     render(<Header />)
     expect(screen.getByText('活動内容')).toBeInTheDocument()
-    expect(screen.getByText('プログラム')).toBeInTheDocument()
+    expect(screen.getByText('コミュニティ')).toBeInTheDocument()
     expect(screen.getByText('協会について')).toBeInTheDocument()
     expect(screen.getByText('お問い合わせ')).toBeInTheDocument()
   })
@@ -25,7 +25,7 @@ describe('Header', () => {
   it('should have correct links for menu items', () => {
     render(<Header />)
     expect(screen.getByText('活動内容').closest('a')).toHaveAttribute('href', '/about-us')
-    expect(screen.getByText('プログラム').closest('a')).toHaveAttribute('href', '/join')
+    expect(screen.getByText('コミュニティ').closest('a')).toHaveAttribute('href', '/hunter-community')
     expect(screen.getByText('協会について').closest('a')).toHaveAttribute('href', '/association')
     expect(screen.getByText('お問い合わせ').closest('a')).toHaveAttribute('href', '/contact')
   })
@@ -33,25 +33,23 @@ describe('Header', () => {
   it('should render social media links', () => {
     render(<Header />)
     const twitterLink = screen.getByTitle('X (Twitter)')
-    const facebookLink = screen.getByTitle('Facebook')
     const discordLink = screen.getByTitle('Discord')
     const githubLink = screen.getByTitle('GitHub')
 
     expect(twitterLink).toBeInTheDocument()
     expect(twitterLink).toHaveAttribute('href', 'https://twitter.com/hunters_japan')
     expect(twitterLink).toHaveAttribute('target', '_blank')
-    
-    expect(facebookLink).toBeInTheDocument()
+
     expect(discordLink).toBeInTheDocument()
+    expect(discordLink).toHaveAttribute('href', 'https://discord.gg/7d9e5r8sae')
     expect(githubLink).toBeInTheDocument()
     expect(githubLink).toHaveAttribute('href', 'https://github.com/Japan-Hunting-Association')
   })
 
-  it('should render member login link', () => {
+  it('should not render Facebook or member links', () => {
     render(<Header />)
-    const memberLink = screen.getByTitle('会員登録')
-    expect(memberLink).toBeInTheDocument()
-    expect(memberLink).toHaveAttribute('href', '/join')
+    expect(screen.queryByTitle('Facebook')).not.toBeInTheDocument()
+    expect(screen.queryByTitle('会員登録')).not.toBeInTheDocument()
   })
 
   it('should toggle mobile menu', () => {
@@ -74,10 +72,8 @@ describe('Header', () => {
     
     // Check aria-labels for social links
     expect(screen.getByLabelText('X (Twitter)で最新情報をチェック')).toBeInTheDocument()
-    expect(screen.getByLabelText('Facebookグループに参加')).toBeInTheDocument()
     expect(screen.getByLabelText('Discordサーバーに参加')).toBeInTheDocument()
     expect(screen.getByLabelText('GitHubで協会のプロジェクトを見る')).toBeInTheDocument()
-    expect(screen.getByLabelText('会員登録・ログイン')).toBeInTheDocument()
   })
 
   it('should have proper styling classes', () => {
@@ -122,12 +118,10 @@ describe('Header', () => {
     
     // Check specific icon paths exist
     const xPath = document.querySelector('path[d*="M18.244 2.25h3.308"]')
-    const fbPath = document.querySelector('path[d*="M24 12.073c0-6.627"]')
     const discordPath = document.querySelector('path[d*="M20.317 4.37"]')
     const githubPath = document.querySelector('path[d*="M12 0c-6.626"]')
-    
+
     expect(xPath).toBeInTheDocument()
-    expect(fbPath).toBeInTheDocument()
     expect(discordPath).toBeInTheDocument()
     expect(githubPath).toBeInTheDocument()
   })
