@@ -62,6 +62,13 @@ src/pages/hunter-community/
 └── young-hunter.astro   → /hunter-community/young-hunter
 ```
 
+#### Hunter Magazine
+```
+src/pages/hunter-magazine/
+├── index.astro             → /hunter-magazine (既刊一覧)
+└── call-for-writers.astro  → /hunter-magazine/call-for-writers (執筆者募集要項)
+```
+
 #### 理事・役員
 ```
 src/pages/directors/
