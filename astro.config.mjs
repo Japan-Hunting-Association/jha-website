@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import imgAttr from 'remark-imgattr';
 import path from 'path';
+import { fileURLToPath } from 'url';
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -16,6 +17,13 @@ export default defineConfig({
     prefixDefaultLocale: true
   },
   integrations: [tailwind(), react()],
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src')
+      }
+    }
+  },
   markdown: {
     remarkPlugins: [
       'remark-breaks',

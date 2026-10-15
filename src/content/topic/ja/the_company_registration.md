@@ -4,7 +4,7 @@ isPublic: true
 pubDate: 2024-10-02
 description: '日本狩猟協会の法人登記が完了しました。'
 author: 'yunoda'
-cover: "src/assets/online-hunters-union.png" 
+cover: "@/assets/online-hunters-union.png" 
 coverAlt: "The company registration of Japan Hunting Associaiton has been completed."
 lang: ja
 ---

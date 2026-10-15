@@ -4,7 +4,7 @@ isPublic: true
 pubDate: 2025-03-31
 description: '2024年度の活動報告書、会計報告書、定期会員総会議事録を公開しました。'
 author: 'yunoda'
-cover: "src/assets/online-hunters-union.png" 
+cover: "@/assets/online-hunters-union.png" 
 coverAlt: "Japan Hunting Association activity reports announcement"
 lang: ja
 ---
