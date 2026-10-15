@@ -2,6 +2,7 @@
 import Layout from "@/layouts/_layout.astro";
 
 const discordUrl = 'https://discord.gg/7d9e5r8sae';
+const samplePdfUrl = '/hunter-magazine/hunter_magazine_002_sample.pdf';
 
 // 太字で強調したい項目は { strong: '...' } で指定する
 type GuidelineItem = string | { strong: string };
@@ -11,6 +12,7 @@ type Guideline = {
     lead?: string;
     items: GuidelineItem[];
     note?: string;
+    link?: { label: string; href: string };
     rejected?: { heading: string; items: string[]; note: string };
 };
 
@@ -57,7 +59,9 @@ const guidelines: Guideline[] = [
             '紙面の都合で画像の位置を動かすことがあります。配置の希望を書き添えていただけると助かります',
             '写真は原稿データとは別にオリジナルデータを提出していただけると助かります。編集の都合上、オリジナルデータを使わせていただくことがあります',
             '原稿はDiscordの「狩猟研究誌」チャンネルに直接投稿してください'
-        ]
+        ],
+        note: '実際の誌面のイメージは、vol.2のサンプルでご確認いただけます。',
+        link: { label: '誌面サンプル（vol.2・PDF）を見る', href: samplePdfUrl }
     },
     {
         title: '編集方針',
@@ -174,6 +178,17 @@ const steps = [
                             </ul>
                             {guideline.note && (
                                 <p class="mt-6 text-sm text-gray-500">{guideline.note}</p>
+                            )}
+                            {guideline.link && (
+                                <a
+                                    href={guideline.link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="mt-3 inline-flex items-center gap-2 text-sm text-orange hover:underline underline-offset-4"
+                                >
+                                    <i class="ph ph-file-pdf"></i>
+                                    {guideline.link.label}
+                                </a>
                             )}
                             {guideline.rejected && (
                                 <div class="mt-8 border-l-2 border-orange pl-4">
