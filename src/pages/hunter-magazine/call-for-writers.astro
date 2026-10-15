@@ -3,10 +3,13 @@ import Layout from "@/layouts/_layout.astro";
 
 const discordUrl = 'https://discord.gg/7d9e5r8sae';
 
+// 太字で強調したい項目は { strong: '...' } で指定する
+type GuidelineItem = string | { strong: string };
+
 type Guideline = {
     title: string;
     lead?: string;
-    items: string[];
+    items: GuidelineItem[];
     note?: string;
     rejected?: { heading: string; items: string[]; note: string };
 };
@@ -45,7 +48,7 @@ const guidelines: Guideline[] = [
     {
         title: '原稿について',
         items: [
-            '**原稿はMarkdown、テキストファイル、Googleドキュメント等のデジタルデータで提出してください**',
+            { strong: '原稿はMarkdown、テキストファイル、Googleドキュメント等のデジタルデータで提出してください' },
             'テキスト主体の記事は、論文スタイルで掲載します',
             '写真主体の記事は、写真に合わせたレイアウトで掲載します。執筆者自身がレイアウトしたものを提出していただくことも可能です。',
             '分量の上限・下限はありません',
@@ -76,7 +79,7 @@ const guidelines: Guideline[] = [
     {
         title: '費用と売上',
         items: [
-            '参加費は無料です',
+            { strong: '参加費は無料です' },
             '売上で印刷費などの経費をまかなえなかった場合は、繰越金で補填するか、不足分を執筆者全員で均等に負担します',
             '売上は執筆者に分配せず、全額を日本狩猟協会の運営費に充てます',
             '執筆者が立て替えた印刷費や、物販用に提供いただいた品の送料は、実費で精算します。精算は辞退することもできます',
@@ -161,7 +164,11 @@ const steps = [
                                 {guideline.items.map((item) => (
                                     <li class="flex gap-3">
                                         <span class="mt-2.5 w-1.5 h-1.5 bg-orange flex-shrink-0"></span>
-                                        <span>{item}</span>
+                                        {typeof item === 'string' ? (
+                                            <span>{item}</span>
+                                        ) : (
+                                            <strong class="font-bold text-gray-900">{item.strong}</strong>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
