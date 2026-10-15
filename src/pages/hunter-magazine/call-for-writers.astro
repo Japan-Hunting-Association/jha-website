@@ -1,0 +1,222 @@
+---
+import Layout from "@/layouts/_layout.astro";
+
+const discordUrl = 'https://discord.gg/7d9e5r8sae';
+
+type Guideline = {
+    title: string;
+    lead?: string;
+    items: string[];
+    note?: string;
+    rejected?: { heading: string; items: string[]; note: string };
+};
+
+const guidelines: Guideline[] = [
+    {
+        title: 'テーマ',
+        lead: '「狩猟」に関係することすべて',
+        items: [
+            '狩猟に関係していれば、技術・道具・体験記・調査・考察など、内容は問いません',
+            '初心者向けでも専門家向けでも構いません',
+            '他の執筆者とテーマが重なっても大丈夫です。同じテーマでも、視点が違えば別の記事になります'
+        ],
+        note: '堅苦しい研究誌ではありません。思ったことや感じたことを気軽に書いてください。あなたの記事が、これからの狩猟をもっと良くするきっかけになります。'
+    },
+    {
+        title: '参加資格',
+        items: [
+            '執筆経験は問いません。ブログや同人誌を書いたことがなくても大丈夫です',
+            '狩猟免許などの資格や専門知識は問いません',
+            '年齢や居住地の制限はありません',
+            'ペンネームで参加できます',
+            '応募が多い場合も、原則としてすべての記事を掲載します'
+        ],
+        note: '狩猟をしたことがない方も狩猟をしたことがある方もどちらも大歓迎です。狩猟に関することなら、どんな内容でも構いません。'
+    },
+    {
+        title: 'スケジュール',
+        lead: '原稿締切や頒布イベントは、号ごとにDiscordでお知らせします',
+        items: [
+            'Hunter Magazineは技術書典にあわせて発行しています',
+            'およそイベント開催日の２週間前に原稿締切を設けます。締切はDiscordで告知します',
+            '締切に間に合わなかった原稿は掲載を見送ります。入稿が遅れると印刷費が大きく上がるため、締切は必ず守ってください'
+        ]
+    },
+    {
+        title: '原稿について',
+        items: [
+            '**原稿はMarkdown、テキストファイル、Googleドキュメント等のデジタルデータで提出してください**',
+            'テキスト主体の記事は、論文スタイルで掲載します',
+            '写真主体の記事は、写真に合わせたレイアウトで掲載します。執筆者自身がレイアウトしたものを提出していただくことも可能です。',
+            '分量の上限・下限はありません',
+            '出版形式は紙の本とPDFです',
+            '画像や図表は自由に使えます。ただし、大量に使う場合は編集負荷が大きくなるため、事前にご相談ください',
+            '紙面の都合で画像の位置を動かすことがあります。配置の希望を書き添えていただけると助かります',
+            '写真は原稿データとは別にオリジナルデータを提出していただけると助かります。編集の都合上、オリジナルデータを使わせていただくことがあります',
+            '原稿はDiscordの「狩猟研究誌」チャンネルに直接投稿してください'
+        ]
+    },
+    {
+        title: '編集方針',
+        items: [
+            '自由に書いていただくことを大切にしているため、査読やレビューは行いません',
+            '誤字脱字の校正も原則として行いません。提出前にご自身で見直してください'
+        ],
+        rejected: {
+            heading: '次のような原稿は掲載をお断りします',
+            items: [
+                '剽窃や、他人の文章・画像の無断転載を含むもの',
+                'AIに生成させただけの、独自性のないもの',
+                '法令に反する行為を勧めるもの',
+                'その他、第三者の権利を侵害するもの'
+            ],
+            note: 'AIを推敲や調べものの補助に使うことは問題ありません。大切にしているのは、あなた自身の経験や考えが書かれていることです。'
+        }
+    },
+    {
+        title: '費用と売上',
+        items: [
+            '参加費は無料です',
+            '売上で印刷費などの経費をまかなえなかった場合は、繰越金で補填するか、不足分を執筆者全員で均等に負担します',
+            '売上は執筆者に分配せず、全額を日本狩猟協会の運営費に充てます',
+            '執筆者が立て替えた印刷費や、物販用に提供いただいた品の送料は、実費で精算します。精算は辞退することもできます',
+            '精算は頒布イベントごとに行います'
+        ]
+    },
+    {
+        title: '権利について',
+        items: [
+            '各記事の著作権は執筆者に、出版物全体の著作権は日本狩猟協会に帰属します',
+            '執筆者は日本狩猟協会に対し、Hunter Magazine（紙の本・PDF）への掲載と、再版を含む頒布を許諾するものとします',
+            '掲載記事の無断転載・複製・再配布は禁止します（著作権法で認められた範囲の引用を除きます）',
+            '執筆者ご自身が自分の記事をブログなどで公開することは可能です。その際は「Hunter Magazine vol.〇 掲載」と出典を記載してください',
+            '記事タイトルと執筆者名は、本サイトや告知で紹介することがあります'
+        ]
+    },
+    {
+        title: 'その他',
+        items: [
+            '執筆の途中でも辞退できます。その場合はDiscordでお知らせください',
+            'わからないことがあれば、Discordでお気軽にお声がけください'
+        ]
+    }
+];
+
+const steps = [
+    {
+        title: 'Discordサーバーに参加する',
+        description: '日本狩猟協会が運営するDiscordサーバー「オンライン猟遊会」に参加してください。'
+    },
+    {
+        title: '「執筆したい」と伝える',
+        description: '「狩猟研究誌」チャンネルで、執筆したい旨をひと言お知らせください。応募書類や自己紹介は要りません。'
+    },
+    {
+        title: '原稿を提出する',
+        description: 'Discordで告知される締切までに、「狩猟研究誌」チャンネルへ原稿を投稿してください。'
+    }
+];
+---
+
+<Layout title="執筆者募集 | Hunter Magazine | 日本狩猟協会" description="Hunter Magazineの執筆者募集要項です。狩猟に関することならテーマは自由。執筆経験や資格は問いません。">
+    <!-- イントロ -->
+    <section class="pt-36 pb-20 px-8 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="text-xs tracking-wider text-gray-500 mb-4">CALL FOR WRITERS</div>
+            <h1 class="text-3xl font-light tracking-wide mb-8">Hunter Magazine 執筆者募集</h1>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                Hunter Magazineでは、記事を書いてくれる方を随時募集しています。<br class="hidden md:inline" />
+                狩猟に関することならテーマは自由で、執筆経験や資格は問いません。
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-10">
+                あなたの知見や体験を、記事として残してみませんか。
+            </p>
+            <a
+                href="/hunter-magazine"
+                class="text-sm tracking-wider text-gray-700 hover:text-black underline underline-offset-4 transition-colors duration-200"
+            >
+                これまでの号を見る
+            </a>
+        </div>
+    </section>
+
+    <!-- 募集要項 -->
+    <section class="py-24 px-8 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="text-xs tracking-wider text-gray-500 mb-4">GUIDELINES</div>
+                <h2 class="text-3xl font-light tracking-wide">募集要項</h2>
+            </div>
+
+            <div class="space-y-px bg-gray-100">
+                {guidelines.map((guideline) => (
+                    <div class="bg-white p-8 md:p-12 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-12">
+                        <h3 class="text-lg font-light tracking-wide">{guideline.title}</h3>
+
+                        <div class="md:col-span-3 text-gray-700 leading-relaxed">
+                            {guideline.lead && (
+                                <p class="text-lg text-orange mb-6">{guideline.lead}</p>
+                            )}
+                            <ul class="space-y-3">
+                                {guideline.items.map((item) => (
+                                    <li class="flex gap-3">
+                                        <span class="mt-2.5 w-1.5 h-1.5 bg-orange flex-shrink-0"></span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            {guideline.note && (
+                                <p class="mt-6 text-sm text-gray-500">{guideline.note}</p>
+                            )}
+                            {guideline.rejected && (
+                                <div class="mt-8 border-l-2 border-orange pl-4">
+                                    <div class="text-sm text-gray-800 mb-3">{guideline.rejected.heading}</div>
+                                    <ul class="space-y-2 text-sm">
+                                        {guideline.rejected.items.map((item) => (
+                                            <li>{item}</li>
+                                        ))}
+                                    </ul>
+                                    <p class="mt-4 text-sm text-gray-500">{guideline.rejected.note}</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- 参加方法 -->
+    <section class="py-24 px-8 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="text-xs tracking-wider text-gray-500 mb-4">HOW TO JOIN</div>
+                <h2 class="text-3xl font-light tracking-wide">参加方法</h2>
+            </div>
+
+            <ol class="space-y-10 mb-16">
+                {steps.map((step, index) => (
+                    <li class="flex gap-6">
+                        <div class="text-3xl font-light text-orange leading-none">{index + 1}</div>
+                        <div>
+                            <h3 class="text-lg text-gray-800 mb-2">{step.title}</h3>
+                            <p class="text-gray-600 leading-relaxed">{step.description}</p>
+                        </div>
+                    </li>
+                ))}
+            </ol>
+
+            <div class="text-center">
+                <a
+                    href={discordUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block border border-gray-800 text-gray-800 px-8 py-3 hover:bg-gray-800 hover:text-white transition-all duration-300 text-sm tracking-wider"
+                >
+                    <i class="ph ph-discord-logo mr-2"></i>
+                    Discordサーバーに参加する
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>
