@@ -4,7 +4,7 @@ isPublic: true
 pubDate: 2024-08-01
 description: 'キョン探しツアーの結果報告'
 author: 'yunoda'
-cover: "src/assets/online-hunters-union.png" 
+cover: "@/assets/online-hunters-union.png" 
 coverAlt: ""
 lang: ja
 ---

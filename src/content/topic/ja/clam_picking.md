@@ -4,7 +4,7 @@ isPublic: true
 pubDate: 2024-05-24
 description: '第一回江戸川潮干狩りの結果報告'
 author: 'yunoda'
-cover: "src/assets/online-hunters-union.png" 
+cover: "@/assets/online-hunters-union.png" 
 coverAlt: ""
 lang: ja
 ---

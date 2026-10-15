@@ -4,7 +4,7 @@ isPublic: true
 pubDate: 2025-09-03
 description: '日本狩猟協会のホームページデザインを全面的にリニューアルしました。'
 author: 'yunoda'
-cover: "src/assets/online-hunters-union.png" 
+cover: "@/assets/online-hunters-union.png" 
 coverAlt: "Japan Hunting Association website redesign announcement"
 lang: ja
 ---

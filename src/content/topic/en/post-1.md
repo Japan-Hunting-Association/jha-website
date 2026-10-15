@@ -4,7 +4,7 @@ isPublish: false
 pubDate: 2024-07-03
 description: ''
 author: 'yunoda'
-cover: "src/assets/online-hunters-union.png" 
+cover: "@/assets/online-hunters-union.png" 
 coverAlt: "A photograph of a sunset behind a mountain range."
 lang: en
 ---
